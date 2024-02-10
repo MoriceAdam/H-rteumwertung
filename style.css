@@ -1,0 +1,55 @@
+.hey{
+padding: auto;
+}
+.hintergrund{
+    margin-left: 180px ;
+    margin-right: 180px;
+}
+
+.tabelle_1{
+
+    height: 15%;;
+    
+}
+
+
+.ramen-l{
+    background-color:#565656;
+    height: 100vh;
+    width: 12vb;
+}
+.ramen{
+    background-color:lightgray;
+    height: 2px;
+    width: 100%;
+
+}
+.disclaimer{
+
+    color: white;
+    font-weight: 300;
+}
+
+.inhalt{ 
+    height: 100vh;
+    
+}
+.inhalt2{
+	width: 90%;  
+}
+
+.eHöhe{
+    height: 11vh;
+
+}
+.abstand{
+    height: 20vh;
+}
+.ränder
+{border-style: solid;
+border-color: #565656;
+border-width: 2px;}
+
+.ausgabe{
+    padding-top: 4px;
+}
