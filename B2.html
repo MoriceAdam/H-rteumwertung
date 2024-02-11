@@ -9,10 +9,10 @@
     <script src=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js” integrity=”sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/” crossorigin=”anonymous”></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="index.js"></script>
+<script src="A1.js"></script>
 </head>
-  <body class="bg-secondary ">
-
+<!--background="Karg.png"-->
+  <body  class="bg-secondary">
     <!--taskleiste//-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark t">
       <div class="container-fluid">
@@ -42,89 +42,187 @@
 <!--Taskkleiste ende-->
 
 
-<div class="ramen " ></div>
-<div class="ramen-l" style="float:left;"></div>
-<div class="ramen-l" style="float: right;"></div></div>
 
-   <div class="hintergrund " >
-  
-    <div class="text-white abstand1">
-    <h1>Tabelle A1</h1>
-    <p>Umwertung für Härtewerte von unlegierten Stählen.</p>
-    <p>Nach ISO 18265.</p>
-  </div>
 
-  
-  <div >
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col" style="width: 30px ;">
-          <div class="dropdown hey">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">Verfahren
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#" >Rm</a></li>
-              <li id="auswahlHV">HV10</li>
-              <li id="auswahlhb">HB</a></li>
-              <li><a href="#">HRB</a></li>
-              <li><a href="#">HRF</a></li>
-              <li><a href="#">HRC</a></li>
-              <li><a href="#">HRA</a></li>
-              <li><a href="#">HAD</a></li>
-              <li><a href="#">HR15N</a></li>
-              <li><a href="#">HR30N</a></li>
-              <li><a href="#">HR45N</a></li>
-            </ul>
-          </div >
-        </th>
-        <th scope="col" style="width: 30px; " style="padding-left: 10px;" >  <input type="number" id="eingabe_1" class="hey"> </th>
-        <th scope="col" style="width: 30px;" style="padding-left: 30px;">  <input type="number" id="eingabe_2" class="hey"> </th>
-        <th scope="col" style="width: 30px;" style="padding-left: 10px;">  <input type="number" id="eingabe_3" class="hey"> </th>
-        <th><p id="härtemittel"></p><p id="aktuellesVerfahren"></p></th>
-        <th scope="col"><button type="button" class="btn btn-secondary" id="button">Umwerten</button></th>
+<div cass="container">
+  <div class="row ">
+<div class=" col-1 ">
 
-  </div>
-  
-  <div Style="margin-left: 22,5%;" Style="margin-right: 22,5%;">
-    <table class="table table-dark abstand">
-      <thead>
-        <tr>
-          <th scope="col" style="width: 5%;">Rm <Br> MPa <Br> [N/mm<sup>2</sup>]<Br>+-2</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Vickers <Br>HV 10</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Brinell <Br>HB</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HRB</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HRF</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HRC</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HRA</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HRD</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HR15N</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HR30N</th>
-          <th scope="col" style="width: 5%;">Härte <Br> Rockwell <Br>HR45N</th>
-         
-      </thead>
-      <tbody>
-        <tr>
-          <td id="zug"></td>
-          <td id="vickers"></td>
-          <td id="brinell"></td>
-          <td id="hrb"></td>
-          <td id="hrf"></td>
-          <td id="hrc"></td>
-          <td id="hra"></td>
-          <td id="hrd"></td>
-          <td id="hr15n"></td>
-          <td id="hr30n"></td>
-          <td id="hr45n"></td>
-        </tr>
+</div>
+
+      <div class=" bg-dark col-10  inhalt ränder ">
+
+        <div class="row">
+          <div class=" col-0 col-lg-1  "></div>
+          <div class="col-12  col-lg-10  text-white " ><h1>Tabelle B2</h1>
+            <p>Umwertung für Härtewerte von Vergütungsstählen im vergüteten Zustand.</p>
+            <p>Nach DIN EN ISO 18265.</p></div>
+          <div class="col-0 col-lg-1  "></div>
+        </div>
+
+        <div class="row">
+          <div class=" col-0 col-lg-1"></div>
+                      <div class=" bg-dark col-12 col-lg-10 container ränder ">
+                        <div class="row">
+                        <div class="col-0 col-sm-12 "> ahll</div>
+                        </div >
+                        <div class="row">
+                        <div class="dropdown col-12 col-lg-2 text-center " style="margin-bottom:5px;">
+                          <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" >Verfahren
+                          <span class="caret"></span></button>
+                          <ul class="dropdown-menu">
+                            <li id="auswahlrm" >Rm</li>
+                            <li id="auswahlHV">HV10</li>
+                            <li id="auswahlhb">HB</li>
+                            <li id="auswahlhrb">HRB</li>
+                            <li id="auswahlhrf">HRF</li>
+                            <li id="auswahlhrc">HRC</li>
+                            <li id="auswahlhra">HRA</li>
+                            <li id="auswahlhrd">HRD</li>
+                            <li id="auswahlhr15">HR15N</li>
+                            <li id="auswahlhr30">HR30N</li>
+                            <li id="auswahlhr45">HR45N</li>
+                          </ul><br>
+                          <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" style="margin-top: 10px;">Anzahl
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                              <li id="1_messungen" >1</li>
+                              <li id="3_messungen" >3</li>
+                              <li id="5_messungen">5</li>
+                              
+                            </ul>
+                        </div>
+                        
+                        
+                          <div class="col-12 col-lg-2 text-center " id="feld1">   
+                            <input type="number" id="eingabe_1" class="col-10 " style="margin-top: 10px;" >
+                            </div>
+                      
+                          <div class="col-12 col-lg-2 text-center" id="feld2" >  
+                            <input type="number" id="eingabe_2" class="col-10 " style="margin-top: 10px;">
+                            </div>
+                      
+                        <div class="col-12 col-lg-2 text-center" id="feld3"> 
+                              <input type="number" id="eingabe_3" class="col-10 " style="margin-top: 10px;"> 
+                          </div>
+                        
+                            <div class="col-6 col-lg-1 text-center" style="height: 25px;" > <h2 id="härtemittel"  style="color: white;"   ></h2></div>
+                              <div class="col-6 col-lg-1 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
+                      
+                                  <div class="col-12 col-lg-2 text-center"> <button type="button" class="btn btn-secondary " id="button" style="margin-top: 10px;">Umwerten</button></div>
+                                </div>
+
+                                <div class="row">
+                                  <div class="col-0 col-sm-12 " style="height: 5vh;"> </div>
+                                  </div >
+                      </div>
+            <div class=" col-1 col-lg-1 "></div>
        
-      </tbody>
-    </table>
+       
+
+<div class="col-12 abstand"></div>
+<div class="col-0 col-lg-1 abstand"></div>
+
+ <!-------------------------ausgabe------------------------------>   
+ <div class=" col-12 col-lg-10" style="color: white;">
+                
+  <div class="row bg-dark">
+
+    <div class="col-6 col-lg-1 ränder " >
+      <div class=".eHöhe">Ergebnise</div>
+        <div></div>
+      </div>
+
+    <div class="col-6 col-lg-1 ränder " >
+    <div class=".eHöhe">Rm <Br> MPa <Br> [N/mm<sup>2</sup>]</div>
+      <div id="zug" class="ausgabe" ></div>
     </div>
-    <div class="disclaimer"><p>Achtung: <br> Diese Umwertung wurde mithilfe von interpulation aus den Erfahungswerten der ISO 1825 geschaffen.<br>
-    Folglich handelt es sich lediglich um annäherungswerte und eine Messung mit dem richtigem Verfahren wird empfohlen </p></div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Vickers <Br>HV 10</div>
+      <div id="vickers" class="ausgabe"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Brinell <Br>HB</div>
+      <div id="brinell" class="ausgabe"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRB</div>
+      <div id="hrb" class="ausgabe"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRF</div>
+      <div id="hrf"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRC</div>
+      <div id="hrc"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRA</div>
+      <div id="hra"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRD</div>
+      <div id="hrd"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR15N</div>
+      <div id="hr15n"></div>
+    </div>
+
+      <div class=" col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR30N</div>
+      <div id="hr30n"></div>
+    </div>
+
+      <div class="col-6 col-lg-1 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR45N</div>
+      <div id="hr45n"></div>
+      </div>
+    </div>
+
+</div>
+</div>
+<!----------------------------------ausgabe    ende---------------------------------------> 
+
+<div class="col-0 col-lg-1"></div>
+
+<div class="row">
+  <div class="col-1 col-lg-1 bg-dark" style="height: 500px;" >
+  </div>
+  <div class="col-11  bg-dark" style="height: 500px;" >
+  </div>
+
+  </div> 
+
+<div class="row">
+<div class="col-12 bg-dark" style="  color: white;">
+<div class="disclaimer"><p>Achtung: <br> Diese Umwertung wurde mithilfe von interpulation aus den Erfahungswerten der ISO 1825 geschaffen.<br>
+  Folglich handelt es sich lediglich um annäherungswerte und eine Messung mit dem richtigem Verfahren wird empfohlen </p></div>
+</div> 
 </div>
 </div>
 </div>
+
+
+                     
+                                 
+                          
+                
+          </div>
+
+            
+        
+        
+       
+
   </body>
 </html>
