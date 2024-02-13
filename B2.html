@@ -75,14 +75,15 @@
                             <li id="auswahlrm" >Rm</li>
                             <li id="auswahlHV">HV10</li>
                             <li id="auswahlhb">HB</li>
-                            <li id="auswahlhrb">HRB</li>
-                            <li id="auswahlhrf">HRF</li>
                             <li id="auswahlhrc">HRC</li>
                             <li id="auswahlhra">HRA</li>
-                            <li id="auswahlhrd">HRD</li>
-                            <li id="auswahlhr15">HR15N</li>
-                            <li id="auswahlhr30">HR30N</li>
-                            <li id="auswahlhr45">HR45N</li>
+                            <li id="auswahlhr45n">HR45N</li>
+                            <li id="auswahlhr30n">HR30N</li>
+                            <li id="auswahlhrb">HRB</li>
+                            <li id="auswahlhrf">HRF</li>
+                            <li id="auswahlhr45t">HR45T</li>
+                            <li id="auswahlhr30t">HR30T</li>
+                            <li id="auswahlhr15t">HR15T</li>
                           </ul><br>
                           <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" style="margin-top: 10px;">Anzahl
                             <span class="caret"></span></button>
@@ -129,65 +130,92 @@
                 
   <div class="row bg-dark">
 
-    <div class="col-6 col-lg-1 ränder " >
+    <div class="col-6 col-lg-3 ränder " >
       <div class=".eHöhe">Ergebnise</div>
         <div></div>
       </div>
 
-    <div class="col-6 col-lg-1 ränder " >
+    <div class="col-6 col-lg-3 ränder " >
     <div class=".eHöhe">Rm <Br> MPa <Br> [N/mm<sup>2</sup>]</div>
       <div id="zug" class="ausgabe" ></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
+      <div class="col-6 col-lg-3 ränder">
     <div class=".eHöhe">Härte <Br> Vickers <Br>HV 10</div>
       <div id="vickers" class="ausgabe"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
+      <div class="col-6 col-lg-3 ränder">
     <div class=".eHöhe">Härte <Br> Brinell <Br>HB</div>
       <div id="brinell" class="ausgabe"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRB</div>
-      <div id="hrb" class="ausgabe"></div>
-    </div>
-
-      <div class="col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRF</div>
-      <div id="hrf"></div>
-    </div>
-
-      <div class="col-6 col-lg-1 ränder">
+      <div class="col-6 col-lg-3 ränder">
     <div class=".eHöhe">Härte <Br> Rockwell <Br>HRC</div>
-      <div id="hrc"></div>
+      <div id="hrc" class="ausgabe"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
+      <div class="col-6 col-lg-3 ränder">
     <div class=".eHöhe">Härte <Br> Rockwell <Br>HRA</div>
       <div id="hra"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRD</div>
-      <div id="hrd"></div>
+      <div class="col-6 col-lg-3 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRC</div>
+      <div id="hrc"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR15N</div>
-      <div id="hr15n"></div>
+      <div class="col-6 col-lg-3 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRA</div>
+      <div id="hra"></div>
     </div>
 
-      <div class=" col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR30N</div>
-      <div id="hr30n"></div>
+    <div class="col-6 col-lg-3 ränder">
+      <div class=".eHöhe">Härte <Br> Rockwell <Br>HR45N</div>
+        <div id="hr45n"></div>
+        </div>
+
+        
+        <div class=" col-6 col-lg-3 ränder">
+          <div class=".eHöhe">Härte <Br> Rockwell <Br>HR30N</div>
+            <div id="hr30n"></div>
+          </div>
+      
+          <div class="col-6 col-lg-3 ränder">
+            <div class=".eHöhe">Härte <Br> Rockwell <Br>HR15N</div>
+              <div id="hr15n"></div>
+            </div>
+        
+
+      <div class="col-6 col-lg-3 ränder">
+    <div class=".eHöhe">Härte <Br> Rockwell <Br>HRB</div>
+      <div id="hrb"></div>
     </div>
 
-      <div class="col-6 col-lg-1 ränder">
-    <div class=".eHöhe">Härte <Br> Rockwell <Br>HR45N</div>
-      <div id="hr45n"></div>
+    <div class="col-6 col-lg-3 ränder">
+      <div class=".eHöhe">Härte <Br> Rockwell <Br>HRF</div>
+        <div id="hrf"></div>
       </div>
+
+      <div class="col-6 col-lg-3 ränder">
+        <div class=".eHöhe">Härte <Br> Rockwell <Br>HR45T</div>
+          <div id="hr45t"></div>
+        </div>
+
+        <div class="col-6 col-lg-3 ränder">
+          <div class=".eHöhe">Härte <Br> Rockwell <Br>H30T</div>
+            <div id="hr30t"></div>
+          </div>
+
+          <div class="col-6 col-lg-3 ränder">
+            <div class=".eHöhe">Härte <Br> Rockwell <Br>HR15T</div>
+              <div id="hr15t"></div>
+            </div>
+
+            
+     
+     
+      
     </div>
 
 </div>
