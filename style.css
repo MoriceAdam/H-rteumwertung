@@ -1,10 +1,3 @@
-.hey{
-padding: auto;
-}
-.hintergrund{
-    margin-left: 180px ;
-    margin-right: 180px;
-}
 
 .tabelle_1{
 
@@ -15,17 +8,9 @@ padding: auto;
 .t{
     width: 100%;
 }
-.ramen-l{
-    background-color:#565656;
-    height: 100vh;
-    width: 12vb;
-}
-.ramen{
-    background-color:lightgray;
-    height: 2px;
-    width: 100%;
 
-}
+
+
 .disclaimer{
 
     color: white;
@@ -50,7 +35,10 @@ padding: auto;
 .ränder
 {border-style: solid;
 border-color: #565656;
-border-width: 2px;}
+border-width: 1px;}
+
+
+
 
 .ausgabe{
     padding-top: 4px;
