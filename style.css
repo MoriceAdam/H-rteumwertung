@@ -32,6 +32,7 @@
 }
 .abstand{
     height: 7vh;
+    align-self: center;
 }
 .ränder
 {border-style: solid;
@@ -45,3 +46,20 @@ border-width: 1px;}
     padding-top: 4px;
    
 }
+.dropdown-menu li {
+    position: relative;
+    }
+    .dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+    }
+    .dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+    }
+    .dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+    }
+    .mitte{margin-left: 42.5%;}
