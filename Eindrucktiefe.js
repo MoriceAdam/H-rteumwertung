@@ -302,7 +302,7 @@ function ha(y){
     absRNE =3*dm;
     absENE = 6*dm;
     if(dm<0.24*y){alert('Eindruckdurchmesser zu klein! Nutzen sie einen höheren Beanspruchungsgrad oder einen größeren Kugeldurchmesser ' );
-    document.getElementById("warnung").innerHTML=('<img src="Kugelkleiner.jpg">');
+    document.getElementById("warnung").innerHTML=('<img src="Kugelkleiner.jpg" >');
 };
 if(dm>0.6*y){alert('Eindruckdurchmesser zu groß! Nutzen sie einen kleineren Beanspruchungsgrad oder einen kleineren Kugeldurchmesser');};
 }

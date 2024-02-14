@@ -30,6 +30,11 @@
     text-align:center;
 
 }
+.eHöhe{
+    height: 150px;
+    text-align:center;
+
+}
 .abstand{
     height: 7vh;
     align-self: center;
@@ -44,7 +49,7 @@ border-width: 1px;}
 
 .ausgabe{
     padding-top: 4px;
-   
+    text-align:center;
 }
 .dropdown-menu li {
     position: relative;
@@ -55,11 +60,13 @@ border-width: 1px;}
     left: 100%;
     top: -7px;
     }
-    .dropdown-menu .dropdown-submenu-left {
-    right: 100%;
-    left: auto;
-    }
+  
     .dropdown-menu > li:hover > .dropdown-submenu {
     display: block;
     }
-    .mitte{margin-left: 42.5%;}
+    .warnhinweis{
+        padding-top: 2px;
+        text-align:center;
+        margin-bottom: 2px;
+        
+    }
