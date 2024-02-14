@@ -18,7 +18,7 @@
 }
 
 .inhalt{ 
-    height: 100vh;
+    height: 100%;
     
 }
 .inhalt2{
@@ -26,7 +26,8 @@
 }
 
 .eHöhe{
-    height: 11vh;
+    height: 80px;
+    text-align:center;
 
 }
 .abstand{
@@ -42,4 +43,5 @@ border-width: 1px;}
 
 .ausgabe{
     padding-top: 4px;
+   
 }

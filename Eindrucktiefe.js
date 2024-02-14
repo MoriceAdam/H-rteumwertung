@@ -176,6 +176,25 @@ if(verfahren===1){
     let vickers10tiefe= 0.1428*dm;
     vickers10tiefe = vickers10tiefe.toFixed(3)
     document.getElementById("eindrucktiefe").innerHTML=(vickers10tiefe + 'mm');
+
+    let dMin=dm*1.5;
+    dMin=dMin.toFixed(3);
+    document.getElementById("mindestdicke").innerHTML=(dMin + 'mm');
+    let absRS =2.5*dm;
+    absRS=absRS.toFixed(3);
+    document.getElementById("abstand1").innerHTML=(absRS + 'mm');
+    let absES = 3*dm;
+    absES=absES.toFixed(3);
+    document.getElementById("abstand2").innerHTML=(absES + 'mm');
+    let absRNE =3*dm;
+    absRNE=absRNE.toFixed(3);
+    document.getElementById("abstand3").innerHTML=(absRNE + 'mm');
+    let absENE = 6*dm;
+    absENE=absENE.toFixed(3);
+    document.getElementById("abstand4").innerHTML=(absENE + 'mm');
+
+
+
 }
     /*
     
