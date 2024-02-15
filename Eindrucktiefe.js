@@ -3,6 +3,17 @@
 let verfahren= 0;
 let anzahl = 1 ;
 
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    }
+    var $subMenu = $(this).next(".dropdown-menu");
+    $subMenu.toggleClass('show');
+    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $('.dropdown-submenu .show').removeClass("show");
+    });
+    return false;
+});
    
 window.addEventListener("load", function() {
 
@@ -98,6 +109,15 @@ window.addEventListener("load", function() {
        };
        if (document.getElementById("auswahlHBW10/30")) {
         document.getElementById("auswahlHBW10/30").addEventListener("click", brinell1030);
+       };
+       if (document.getElementById("auswahlHRA")) {
+        document.getElementById("auswahlHRA").addEventListener("click", rockwella);
+       };
+       if (document.getElementById("auswahlHRC")) {
+        document.getElementById("auswahlHRC").addEventListener("click", rockwellc);
+       };
+       if (document.getElementById("auswahlHRD")) {
+        document.getElementById("auswahlHRD").addEventListener("click", rockwelld);
        };
 
 
@@ -295,6 +315,34 @@ function brinell1030() {
     document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
 }
 
+function rockwella() {
+    verfahren = 30;
+    document.getElementById("aktuellesVerfahren").innerHTML = ('HRA');
+    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
+}
+function rockwellc() {
+    verfahren = 31;
+    document.getElementById("aktuellesVerfahren").innerHTML = ('HRC');
+    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
+}
+function rockwelld() {
+    verfahren = 32;
+    document.getElementById("aktuellesVerfahren").innerHTML = ('HRD');
+    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
+}
+
+function ho(c){
+    dm=Math.sqrt(c/mittelwert);
+    vickersTiefe= 0.1428*dm;
+    dMin=dm*1.5;
+    absRS =2.5*dm;
+    absES = 3*dm;
+    absRNE =3*dm;
+    absENE = 6*dm;  
+    document.getElementById("verschwinde3").style.display = 'none';
+}
+
+
 function ha(y){
     dMin= 8*vickersTiefe;
     absRS =2.5*dm;
@@ -302,12 +350,30 @@ function ha(y){
     absRNE =3*dm;
     absENE = 6*dm;
     if(dm<0.24*y){alert('Eindruckdurchmesser zu klein! Nutzen sie einen höheren Beanspruchungsgrad oder einen größeren Kugeldurchmesser ' );
-    document.getElementById("warnung").innerHTML=('<img src="Kugelkleiner.jpg" >');
+    document.getElementById("warnung").innerHTML=('<img src="Kugelkleiner.jpg" id="verschwinde3">');
+    
 };
+
+
 if(dm>0.6*y){alert('Eindruckdurchmesser zu groß! Nutzen sie einen kleineren Beanspruchungsgrad oder einen kleineren Kugeldurchmesser');};
+
+if(dm<=0.6*y&&dm>=0.24*y){
+    document.getElementById("verschwinde3").style.display = 'none';
+};
 }
 
+function fehler1(){
+    alert('Nicht im Messbereich')
+}
 
+function hi(s,k){
+    vickersTiefe=(k-mittelwert)*s;
+    dm=(vickersTiefe*0.5)*2;
+    dMin=10*vickersTiefe;
+    absRS=2.5*dm;
+    absES=3*dm;
+    document.getElementById("verschwinde3").style.display = 'none';
+}
 
    function test() {
 x =Math.PI;
@@ -347,115 +413,51 @@ else{
 }
     }
 
-
+    if(verfahren>=10){
+        document.getElementById("verschwinde1").style.display = 'none';
+            document.getElementById("verschwinde2").style.display = 'none';
+        }
+    if(verfahren<10){
+            document.getElementById("verschwinde1").style.display = 'block';
+                document.getElementById("verschwinde2").style.display = 'block';
+            }
   // Vikers
 
 if(verfahren===1){
-  
-    dm=Math.sqrt(18.54949981/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;  
+  ho(18.54949981);
+    
     
 }
 if(verfahren===2){
-    dm=Math.sqrt(1.854949981/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-    dm=dm;
+    ho(1.854949981);
 }
 if(verfahren===3){
-    dm=Math.sqrt(0.1854949981/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-    dm=dm;
-
+    ho(0.1854949981);
 }
 if(verfahren===4){
-    dm=Math.sqrt(55.64849942/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-   
-
+    ho(55.64849942);
 }
 if(verfahren===5){
-    dm=Math.sqrt(5.564849942/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
+    h(5.564849942);
 }
 if(verfahren===6){
-  
-    dm=Math.sqrt(0.5564849942/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-
-
+    ho(0.5564849942);
 }
 if(verfahren===7){
-  
-    dm=Math.sqrt(9.274749903/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-
-
+   ho(9.274749903);
 }
 if(verfahren===8){
-  
-    dm=Math.sqrt(0.9274749903/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-
-
+    ho(0.9274749903);
 }
 if(verfahren===9){
-  
-    dm=Math.sqrt(0.027824249/mittelwert);
-    vickersTiefe= 0.1428*dm;
-    dMin=dm*1.5;
-    absRS =2.5*dm;
-    absES = 3*dm;
-    absRNE =3*dm;
-    absENE = 6*dm;
-
+    ho(0.027824249);
 }
-
 if(verfahren===10){
-    
-    dm=Math.sqrt((1**2)-(1-(2*9.807*0.102)/(1*x*mittelwert))**2);
-    vickersTiefe=0.5*(1-Math.sqrt(((1**2)-(dm**2))));
-    ha(1);
 
+    
+    ha(1,9.807);
+    
+    
   
 }
 
@@ -504,8 +506,7 @@ vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))))
 ha(2.5);
 }
 if(verfahren===19){
-    let x =Math.PI;
-   
+
   let dm=Math.sqrt((2.5**2)-(2.5-(2*1839*0.102)/(2.5*x*mittelwert))**2);
   let h=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))));
   ha(2.5);
@@ -514,12 +515,12 @@ if(verfahren===19){
 //5
 if(verfahren===20){
   dm=Math.sqrt((5**2)-(5-(2*245.2*0.102)/(5*x*mittelwert))**2)
-vickersTiefe=0.5*(2.5-Math.sqrt(((5**2)-(dm**2))))
+vickersTiefe=0.5*(5-Math.sqrt(((5**2)-(dm**2))))
 ha(5);
 }
 if(verfahren===21){
-dm=Math.sqrt((5**2)-(5-(2*612.9*0.102)/(5*x*mittelwert))**2)
-vickersTiefe=0.5*(2.5-Math.sqrt(((5**2)-(dm**2))))
+dm=Math.sqrt((5**2)-(5-(2* 612.9*0.102)/(5*x*mittelwert))**2)
+vickersTiefe=0.5*(5-Math.sqrt(((5**2)-(dm**2))))
 ha(5);
 }
 if(verfahren===22){
@@ -565,15 +566,33 @@ vickersTiefe=0.5*(10-Math.sqrt(((10**2)-(dm**2))))
 ha(10);
 }
 
+if (verfahren===30){
+    if(mittelwert>=20&&mittelwert<=95)
+    hi(0.002,100);
+else{
+    fehler1()
+}
+}
+if (verfahren===31){
+    hi(0.002,100);
+}
+if (verfahren===32){
+    hi(0.002,100);
+}
+
+
+
+
+
+
+
+
 
 
 if(dMin>0.01){
     dMin=dMin.toFixed(3);
     document.getElementById("mindestdicke").innerHTML=(dMin + 'mm');
     }
-
-
-
 if(dMin<=0.01){
     dMin=dMin*1000
     dMin=dMin.toFixed(3);
@@ -583,78 +602,56 @@ if(vickersTiefe>0.01){
     vickersTiefe = vickersTiefe.toFixed(3)
 document.getElementById("eindrucktiefe").innerHTML=(vickersTiefe + 'mm');
     }
-
-
 if(vickersTiefe<=0.01){
     vickersTiefe=vickersTiefe*1000
     vickersTiefe = vickersTiefe.toFixed(3)
     document.getElementById("eindrucktiefe").innerHTML=(vickersTiefe + 'µm'); 
 }
-
-
 if(absRS>0.01){
     absRS=absRS.toFixed(3);
     document.getElementById("abstand1").innerHTML=(absRS + 'mm');
     }
-
-
-
 if(absRS<=0.01){
     absRS=absRS*1000
     absES=absES.toFixed(3);
     document.getElementById("abstand1").innerHTML=(absRS + 'µm'); 
 }
-
 if(absES>0.01){
     absES=absES.toFixed(3);
     document.getElementById("abstand2").innerHTML=(absES + 'mm');
     }
-
-
-
 if(absES<=0.01){
     absES=absES*1000
     absES=absES.toFixed(3);
     document.getElementById("abstand2").innerHTML=(absES + 'µm'); 
 }
 
-if(absRNE>0.01){
-    absRNE=absRNE.toFixed(3);
-    document.getElementById("abstand3").innerHTML=(absRNE + 'mm');
-    }
-
-
-
-if(absRNE<=0.01){
-    absRNE=absRNE*1000
-    absRNE=absRNE.toFixed(3);
-    document.getElementById("abstand3").innerHTML=(absRNE + 'µm'); 
-}
-
-if(absENE>0.01){
-    absENE=absENE.toFixed(3);
-    document.getElementById("abstand4").innerHTML=(absENE + 'mm');
-    }
-
-
-if(absENE<=0.01){
-    absENE=absENE*1000
-    absENE=absENE.toFixed(3);
-    document.getElementById("abstand4").innerHTML=(absENE + 'µm'); 
-}
-
-
-    if(dm>0.01){
+if(dm>0.01){
         dm=dm.toFixed(3);
         document.getElementById("eindruckdiagonale").innerHTML=(dm + 'mm');
         }
-    
-    
     if(dm<=0.01){
         dm=dm*1000
         dm=dm.toFixed(3);
         document.getElementById("eindruckdiagonale").innerHTML=(dm + 'µm'); 
     }
-
+    if(absRNE>0.01){
+        absRNE=absRNE.toFixed(3);
+        document.getElementById("abstand3").innerHTML=(absRNE + 'mm');
+        }
+    if(absRNE<=0.01){
+        absRNE=absRNE*1000
+        absRNE=absRNE.toFixed(3);
+        document.getElementById("abstand3").innerHTML=(absRNE + 'µm'); 
+    }
+    if(absENE>0.01){
+        absENE=absENE.toFixed(3);
+        document.getElementById("abstand4").innerHTML=(absENE + 'mm');
+        }
+    if(absENE<=0.01){
+        absENE=absENE*1000
+        absENE=absENE.toFixed(3);
+        document.getElementById("abstand4").innerHTML=(absENE + 'µm'); 
+    }
 }
    
