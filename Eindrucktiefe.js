@@ -339,7 +339,9 @@ function ho(c){
     absES = 3*dm;
     absRNE =3*dm;
     absENE = 6*dm;  
+    if (document.getElementById('verschwinde3')) {
     document.getElementById("verschwinde3").style.display = 'none';
+    }
 }
 
 
@@ -358,7 +360,9 @@ function ha(y){
 if(dm>0.6*y){alert('Eindruckdurchmesser zu groß! Nutzen sie einen kleineren Beanspruchungsgrad oder einen kleineren Kugeldurchmesser');};
 
 if(dm<=0.6*y&&dm>=0.24*y){
+    if (document.getElementById('verschwinde3')) {
     document.getElementById("verschwinde3").style.display = 'none';
+    }
 };
 }
 
@@ -372,7 +376,9 @@ function hi(s,k){
     dMin=10*vickersTiefe;
     absRS=2.5*dm;
     absES=3*dm;
+    if (document.getElementById('verschwinde3')) {
     document.getElementById("verschwinde3").style.display = 'none';
+}
 }
 
    function test() {
