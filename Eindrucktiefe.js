@@ -14,111 +14,229 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
     });
     return false;
 });
-   
-window.addEventListener("load", function() {
 
-
-    if (document.getElementById("auswahlHV10")) {
-        document.getElementById("auswahlHV10").addEventListener("click", vickers10);
-       };
-    if (document.getElementById("auswahlHV1")) {
-        document.getElementById("auswahlHV1").addEventListener("click", vickers1);
-       };
-    if (document.getElementById("auswahlHV0,1")) {
-       document.getElementById("auswahlHV0,1").addEventListener("click", vickers01);
-       };  
-    if (document.getElementById("auswahlHV30")) {
-        document.getElementById("auswahlHV30").addEventListener("click", vickers30);
-       };
-       if (document.getElementById("auswahlHV3")) {
-        document.getElementById("auswahlHV3").addEventListener("click", vickers3);
-       };
-       if (document.getElementById("auswahlHV0,3")) {
-        document.getElementById("auswahlHV0,3").addEventListener("click", vickers03);
-       };
-       if (document.getElementById("auswahlHV5")) {
-        document.getElementById("auswahlHV5").addEventListener("click", vickers5);
-       };
-       if (document.getElementById("auswahlHV0,5")) {
-        document.getElementById("auswahlHV0,5").addEventListener("click", vickers05);
-       };
-       if (document.getElementById("auswahlHV0,015")) {
-        document.getElementById("auswahlHV0,015").addEventListener("click", vickers0015);
-       };
-       if (document.getElementById("auswahlHBW1/1")) {
-        document.getElementById("auswahlHBW1/1").addEventListener("click", brinell11);
-       };
-      
-       if (document.getElementById("auswahlHBW1/2,5")) {
-        document.getElementById("auswahlHBW1/2,5").addEventListener("click", brinell125);
-       };
-
-       if (document.getElementById("auswahlHBW1/5")) {
-        document.getElementById("auswahlHBW1/5").addEventListener("click", brinell15);
-       };
-
-       if (document.getElementById("auswahlHBW1/10")) {
-        document.getElementById("auswahlHBW1/10").addEventListener("click", brinell110);
-       };
-
-       if (document.getElementById("auswahlHBW1/30")) {
-        document.getElementById("auswahlHBW1/30").addEventListener("click", brinell130);
-       };
-
-       if (document.getElementById("auswahlHBW2,5/1")) {
-        document.getElementById("auswahlHBW2,5/1").addEventListener("click", brinell251);
-       };
-       if (document.getElementById("auswahlHBW2,5/2,5")) {
-        document.getElementById("auswahlHBW2,5/2,5").addEventListener("click", brinell2525);
-       };
-       if (document.getElementById("auswahlHBW2,5/5")) {
-        document.getElementById("auswahlHBW2,5/5").addEventListener("click", brinell255);
-       };
-       if (document.getElementById("auswahlHBW2,5/10")) {
-        document.getElementById("auswahlHBW2,5/10").addEventListener("click", brinell2510);
-       };
-       if (document.getElementById("auswahlHBW2,5/30")) {
-        document.getElementById("auswahlHBW2,5/30").addEventListener("click", brinell2530);
-       };
-       if (document.getElementById("auswahlHBW5/1")) {
-        document.getElementById("auswahlHBW5/1").addEventListener("click", brinell51);
-       };
-       if (document.getElementById("auswahlHBW5/2,5")) {
-        document.getElementById("auswahlHBW5/2,5").addEventListener("click", brinell525);
-       };
-       if (document.getElementById("auswahlHBW5/5")) {
-        document.getElementById("auswahlHBW5/5").addEventListener("click", brinell55);
-       };
-       if (document.getElementById("auswahlHBW5/10")) {
-        document.getElementById("auswahlHBW5/10").addEventListener("click", brinell510);
-       };
-       if (document.getElementById("auswahlHBW5/30")) {
-        document.getElementById("auswahlHBW5/30").addEventListener("click", brinell530);
-       };
-       if (document.getElementById("auswahlHBW10/1")) {
-        document.getElementById("auswahlHBW10/1").addEventListener("click", brinell101);
-       };
-       if (document.getElementById("auswahlHBW10/2,5")) {
-        document.getElementById("auswahlHBW10/2,5").addEventListener("click", brinell1025);
-       };
-       if (document.getElementById("auswahlHBW10/5")) {
-        document.getElementById("auswahlHBW10/5").addEventListener("click", brinell105);
-       };
-       if (document.getElementById("auswahlHBW10/10")) {
-        document.getElementById("auswahlHBW10/10").addEventListener("click", brinell1010);
-       };
-       if (document.getElementById("auswahlHBW10/30")) {
-        document.getElementById("auswahlHBW10/30").addEventListener("click", brinell1030);
-       };
-       if (document.getElementById("auswahlHRA")) {
-        document.getElementById("auswahlHRA").addEventListener("click", rockwella);
-       };
-       if (document.getElementById("auswahlHRC")) {
-        document.getElementById("auswahlHRC").addEventListener("click", rockwellc);
-       };
-       if (document.getElementById("auswahlHRD")) {
-        document.getElementById("auswahlHRD").addEventListener("click", rockwelld);
-       };
+$(document).ready(function(){
+    $("#auswahlHV10").click(function(){
+        verfahren = 1;
+       $("#aktuellesVerfahren").html(" HV10");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV1").click(function(){
+        verfahren = 2;
+       $("#aktuellesVerfahren").html(" HV1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV01").click(function(){
+        verfahren = 3;
+       $("#aktuellesVerfahren").html(" HV0,1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV30").click(function(){
+        verfahren = 4;
+       $("#aktuellesVerfahren").html(" HV30");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV3").click(function(){
+        verfahren = 5;
+       $("#aktuellesVerfahren").html(" HV3");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV03").click(function(){
+        verfahren = 6;
+       $("#aktuellesVerfahren").html(" HV0,3");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV5").click(function(){
+        verfahren = 7;
+       $("#aktuellesVerfahren").html(" HV5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV05").click(function(){
+        verfahren = 8;
+       $("#aktuellesVerfahren").html(" HV5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHV0015").click(function(){
+        verfahren = 9;
+       $("#aktuellesVerfahren").html(" HV0,015");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW11").click(function(){
+        verfahren = 10;
+       $("#aktuellesVerfahren").html(" HBW 1/1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW125").click(function(){
+        verfahren = 11;
+       $("#aktuellesVerfahren").html(" HBW 1/2,5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW15").click(function(){
+        verfahren = 12;
+       $("#aktuellesVerfahren").html(" HBW 1/5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW110").click(function(){
+        verfahren = 13;
+       $("#aktuellesVerfahren").html(" HBW 1/10");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW130").click(function(){
+        verfahren = 14;
+       $("#aktuellesVerfahren").html(" HBW1/30");
+        $("#abstand5").html("Diagonale");
+    });   
+     $("#auswahlHBW251").click(function(){
+        verfahren = 15;
+       $("#aktuellesVerfahren").html(" HBW2,5/1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW2525").click(function(){
+        verfahren = 16;
+       $("#aktuellesVerfahren").html(" HBW2,5/2,5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW255").click(function(){
+        verfahren = 17;
+       $("#aktuellesVerfahren").html(" HBW2,5/5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW2510").click(function(){
+        verfahren = 18;
+       $("#aktuellesVerfahren").html(" HBW2,5/10");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW2530").click(function(){
+        verfahren = 19;
+       $("#aktuellesVerfahren").html(" HBW2,5/30");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW51").click(function(){
+        verfahren = 20;
+       $("#aktuellesVerfahren").html(" HBW5/1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW525").click(function(){
+        verfahren = 21;
+       $("#aktuellesVerfahren").html(" HBW5/2,5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW55").click(function(){
+        verfahren = 22;
+       $("#aktuellesVerfahren").html(" HBW5/5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW510").click(function(){
+        verfahren = 23;
+       $("#aktuellesVerfahren").html(" HBW5/10");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW530").click(function(){
+        verfahren = 24;
+       $("#aktuellesVerfahren").html(" HBW5/30");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW101").click(function(){
+        verfahren = 25;
+       $("#aktuellesVerfahren").html(" HBW10/1");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW1025").click(function(){
+        verfahren = 26;
+       $("#aktuellesVerfahren").html(" HBW10/2,5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW105").click(function(){
+        verfahren = 27;
+       $("#aktuellesVerfahren").html(" HBW10/5");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW1010").click(function(){
+        verfahren = 28;
+       $("#aktuellesVerfahren").html(" HBW10/10");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHBW1030").click(function(){
+        verfahren = 29;
+       $("#aktuellesVerfahren").html(" HBW10/30");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHRA").click(function(){
+        verfahren = 30;
+       $("#aktuellesVerfahren").html(" HRA");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHRC").click(function(){
+        verfahren = 31;
+       $("#aktuellesVerfahren").html(" HRC");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHRD").click(function(){
+        verfahren = 32;
+       $("#aktuellesVerfahren").html(" HRD");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHR15N").click(function(){
+        verfahren = 33;
+       $("#aktuellesVerfahren").html(" HR15N");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHR30N").click(function(){
+        verfahren = 34;
+       $("#aktuellesVerfahren").html(" HR30N");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHR45N").click(function(){
+        verfahren = 35;
+       $("#aktuellesVerfahren").html(" HR45N");
+        $("#abstand5").html("Diagonale");
+    });
+    $("#auswahlHRB").click(function(){
+        verfahren = 36;
+       $("#aktuellesVerfahren").html(" HRB");
+        $("#abstand5").html("Durchmesser");
+    });
+    $("#auswahlHRE").click(function(){
+        verfahren = 37;
+       $("#aktuellesVerfahren").html(" HRE");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahlHRF").click(function(){
+        verfahren = 38;
+       $("#aktuellesVerfahren").html(" HRF");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahlHRG").click(function(){
+        verfahren = 39;
+       $("#aktuellesVerfahren").html(" HRG");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahlHRH").click(function(){
+        verfahren = 49;
+       $("#aktuellesVerfahren").html(" HRH");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahlHRK").click(function(){
+        verfahren = 41;
+       $("#aktuellesVerfahren").html(" HRK");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahl15T").click(function(){
+        verfahren = 42;
+       $("#aktuellesVerfahren").html(" HR15T");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahl30T").click(function(){
+        verfahren = 43;
+       $("#aktuellesVerfahren").html(" HR30T");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+    $("#auswahl45T").click(function(){
+        verfahren = 43;
+       $("#aktuellesVerfahren").html(" HR45T");
+        $("#abstand5").html("Eindruckdiagonale");
+    });
+  });
 
 
        if (document.getElementById("3_messungen")) {
@@ -137,7 +255,7 @@ window.addEventListener("load", function() {
     if (document.getElementById("button")) {
      document.getElementById("button").addEventListener("click", test);
     }
-   });
+   
 
    function eins() {
     anzahl = 0 ;
@@ -160,176 +278,18 @@ function fünf() {
  document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
 }
 
-function vickers10() {
-    verfahren = 1;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV10');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
+function hu(k,s,d){
+    vickersTiefe=(k-mittelwert)*s;
+    dm = Math.sqrt(d**2-(d-(2*vickersTiefe)**2));
+    dMin=10*vickersTiefe;
+    absRS=2.5*dm;
+    absES=3*dm;
+    if (document.getElementById('verschwinde3')) {
+    document.getElementById("verschwinde3").style.display = 'none';
+    }  
 }
 
-function vickers1() {
-    verfahren = 2;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-  
-function vickers01() {
-    verfahren = 3;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV0,1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers30() {
-    verfahren = 4;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV30');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers3() {
-    verfahren = 5;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV3');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers03() {
-    verfahren = 6;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV0,3');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers5() {
-    verfahren = 7;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers05() {
-    verfahren = 8;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV0,5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function vickers0015() {
-    verfahren = 9;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV0,015');
-    document.getElementById("abstand5").innerHTML=('Eindruckdiagonale');
-}
-function brinell11() {
-    
-    verfahren = 10;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HBW 1/1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell125() {
-    verfahren = 11;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HBW 1/2,5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell15() {
-    verfahren = 12;
-    document.getElementById("abstand5").innerHTML=(Eindruckdurchmesser);
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HBW 1/5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell110() {
-    verfahren = 13;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 1/10');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell130() {
-    verfahren = 14;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 1/30');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
 
-function brinell251() {
-    verfahren = 15;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 2,5/1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-
-function brinell2525() {
-    verfahren = 16;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 2,5/2,5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-
-function brinell255() {
-    verfahren = 17;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 2,5/5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-
-function brinell2510() {
-    verfahren = 18;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 2,5/10');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-
-function brinell2530() {
-    verfahren = 19;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 2,5/30');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell51() {
-    verfahren = 20;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 5/1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell525() {
-    verfahren = 21;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 5/2,5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell55() {
-    verfahren = 22;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 5/5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell510() {
-    verfahren = 23;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 5/10');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell530() {
-    verfahren = 24;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 5/30');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell101() {
-    verfahren = 25;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 10/1');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell1025() {
-    verfahren = 26;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 10/2,5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell105() {
-    verfahren = 27;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 10/5');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell1010() {
-    verfahren = 28;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 10/10');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function brinell1030() {
-    verfahren = 29;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HBW 10/30');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-
-function rockwella() {
-    verfahren = 30;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HRA');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function rockwellc() {
-    verfahren = 31;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HRC');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
-function rockwelld() {
-    verfahren = 32;
-    document.getElementById("aktuellesVerfahren").innerHTML = ('HRD');
-    document.getElementById("abstand5").innerHTML=('Eindruckdurchmesser');
-}
 
 function ho(c){
     dm=Math.sqrt(c/mittelwert);
@@ -430,9 +390,7 @@ else{
   // Vikers
 
 if(verfahren===1){
-  ho(18.54949981);
-    
-    
+  ho(18.54949981); 
 }
 if(verfahren===2){
     ho(1.854949981);
@@ -459,20 +417,14 @@ if(verfahren===9){
     ho(0.027824249);
 }
 if(verfahren===10){
-
-    
-    ha(1,9.807);
-    
-    
-  
-}
-
+    dm=Math.sqrt((1**2)-(1-(2*9.807*0.102)/(1*x*mittelwert))**2)
+     vickersTiefe=0.5*(1-Math.sqrt(((1**2)-(dm**2))))
+     ha(1)}
 if(verfahren===11){
    dm=Math.sqrt((1**2)-(1-(2*24.52*0.102)/(1*x*mittelwert))**2)
     vickersTiefe=0.5*(1-Math.sqrt(((1**2)-(dm**2))))
     ha(1)
 }
-
 if(verfahren===12){ 
   dm=Math.sqrt((1**2)-(1-(2*49.03*0.102)/(1*x*mittelwert))**2)
 vickersTiefe=0.5*(1-Math.sqrt(((1**2)-(dm**2))))
@@ -499,25 +451,21 @@ if(verfahren===16){
     vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))))
     ha(2.5)
 }
-
 if(verfahren===17){
     dm=Math.sqrt((2.5**2)-(2.5-(2*306.5*0.102)/(2.5*x*mittelwert))**2)
     vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))))
     ha(2.5)
 }
-
 if(verfahren===18){
     dm=Math.sqrt((2.5**2)-(2.5-(2*612.9*0.102)/(2.5*x*mittelwert))**2)
 vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))))
 ha(2.5);
 }
 if(verfahren===19){
-
   let dm=Math.sqrt((2.5**2)-(2.5-(2*1839*0.102)/(2.5*x*mittelwert))**2);
   let h=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))));
   ha(2.5);
 }
-
 //5
 if(verfahren===20){
   dm=Math.sqrt((5**2)-(5-(2*245.2*0.102)/(5*x*mittelwert))**2)
@@ -573,19 +521,110 @@ ha(10);
 }
 
 if (verfahren===30){
-    if(mittelwert>=20&&mittelwert<=95)
-    hi(0.002,100);
+    if(mittelwert>=20&&mittelwert<=95){
+    hi(0.002,100);}
 else{
     fehler1()
 }
 }
 if (verfahren===31){
-    hi(0.002,100);
+    if(mittelwert>=20&&mittelwert<=70){
+    hi(0.002,100);}
+    else{
+        fehler1()
+    }
 }
 if (verfahren===32){
-    hi(0.002,100);
+    if(mittelwert>=40&&mittelwert<=77){
+    hi(0.002,100);}
+    else{
+        fehler1()
+    }
 }
-
+if (verfahren===33){
+    if(mittelwert>=70&&mittelwert<=94){
+    hi(0.001,100);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===34){
+    if(mittelwert>=42&&mittelwert<=86){
+    hi(0.001,100);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===35){
+    if(mittelwert>=20&&mittelwert<=77){
+    hi(0.001,100);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===36){
+    if(mittelwert>=10&&mittelwert<=100){
+    hu(130, 0.002, 1.5875);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===37){
+    if(mittelwert>=70&&mittelwert<=100){
+    hu(130, 0.002, 3.175);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===38){
+    if(mittelwert>=60&&mittelwert<=100){
+    hu(130, 0.002, 1.5875);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===39){
+    if(mittelwert>=30&&mittelwert<=94){
+    hu(130, 0.002, 1.5875);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===40){
+    if(mittelwert>=80&&mittelwert<=100){
+    hu(130, 0.002, 3.175);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===41){
+    if(mittelwert>=40&&mittelwert<=100){
+    hu(130, 0.002, 3.175);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===42){
+    if(mittelwert>=67&&mittelwert<=93){
+    hu(100, 0.001, 1.5875);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===43){
+    if(mittelwert>=29&&mittelwert<=82){
+    hu(100, 0.001, 1.5875);}
+    else{
+        fehler1()
+    }
+}
+if (verfahren===44){
+    if(mittelwert>=1&&mittelwert<=72){
+    hu(100, 0.001, 1.5875);}
+    else{
+        fehler1()
+    }
+}
 
 
 
