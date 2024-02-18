@@ -317,11 +317,14 @@ function ha(y){
 };
 
 
-if(dm>0.6*y){alert('Eindruckdurchmesser zu groß! Nutzen sie einen kleineren Beanspruchungsgrad oder einen kleineren Kugeldurchmesser');};
+if(dm>0.6*y){alert('Eindruckdurchmesser zu groß! Nutzen sie einen kleineren Beanspruchungsgrad oder einen kleineren Kugeldurchmesser');
+document.getElementById("warnung").innerHTML=('<img src="Kugelgrößer.jpg" id="verschwinde3">');
+};
 
 if(dm<=0.6*y&&dm>=0.24*y){
     if (document.getElementById('verschwinde3')) {
     document.getElementById("verschwinde3").style.display = 'none';
+    
     }
 };
 }
