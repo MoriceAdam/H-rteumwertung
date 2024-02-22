@@ -2,10 +2,17 @@
 
 let verfahren= 0;
 let anzahl = 1 ;
-
-   
-window.addEventListener("load", function() {
-
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    }
+    var $subMenu = $(this).next(".dropdown-menu");
+    $subMenu.toggleClass('show');
+    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $('.dropdown-submenu .show').removeClass("show");
+    });
+    return false;
+});
 
     $(document).ready(function(){
         $("#auswahlrm").click(function(){
@@ -71,7 +78,7 @@ window.addEventListener("load", function() {
     if (document.getElementById("button")) {
      document.getElementById("button").addEventListener("click", test);
     }
-   });
+   
 
    function eins() {
     anzahl = 0 ;
@@ -128,9 +135,9 @@ else {
 else{
 
   let zahl1 = document.getElementById("eingabe_1").value;
-   mittelwert = zahl1;
-   
-    document.getElementById("härtemittel").innerHTML = (mittelwert); 
+   let mittelwerd = (zahl1/1);
+  mittelwert = mittelwerd.toFixed(1);
+    $("#härtemittel").html(mittelwert); 
 }
     }
 

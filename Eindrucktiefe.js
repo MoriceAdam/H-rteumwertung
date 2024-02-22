@@ -199,42 +199,42 @@ $(document).ready(function(){
     $("#auswahlHRE").click(function(){
         verfahren = 37;
        $("#aktuellesVerfahren").html(" HRE");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahlHRF").click(function(){
         verfahren = 38;
        $("#aktuellesVerfahren").html(" HRF");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahlHRG").click(function(){
         verfahren = 39;
        $("#aktuellesVerfahren").html(" HRG");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahlHRH").click(function(){
         verfahren = 49;
        $("#aktuellesVerfahren").html(" HRH");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahlHRK").click(function(){
         verfahren = 41;
        $("#aktuellesVerfahren").html(" HRK");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahl15T").click(function(){
         verfahren = 42;
        $("#aktuellesVerfahren").html(" HR15T");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahl30T").click(function(){
         verfahren = 43;
        $("#aktuellesVerfahren").html(" HR30T");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
     $("#auswahl45T").click(function(){
         verfahren = 43;
        $("#aktuellesVerfahren").html(" HR45T");
-        $("#abstand5").html("Eindruckdiagonale");
+        $("#abstand5").html("Durchmesser");
     });
   });
 
@@ -661,7 +661,7 @@ if(absRS>0.01){
     }
 if(absRS<=0.01){
     absRS=absRS*1000
-    absES=absES.toFixed(3);
+    absRS=absRS.toFixed(3);
     document.getElementById("abstand1").innerHTML=(absRS + 'µm'); 
 }
 if(absES>0.01){

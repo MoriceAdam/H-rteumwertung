@@ -3,43 +3,53 @@
 let verfahren= 0;
 let anzahl = 1 ;
 
-   
-window.addEventListener("load", function() {
+    $(document).ready(function(){
+        $("#auswahlrm").click(function(){
+            verfahren = 1;
+           $("#aktuellesVerfahren").html("MPa");
+        });
+        $("#auswahlHV").click(function(){
+            verfahren = 2;
+           $("#aktuellesVerfahren").html("HV");
+        });
+        $("#auswahlhb").click(function(){
+            verfahren = 3;
+           $("#aktuellesVerfahren").html("HBW");
+        });
+        $("#auswahlhrb").click(function(){
+            verfahren = 4;
+           $("#aktuellesVerfahren").html("HRB");
+        });
+        $("#auswahlhrf").click(function(){
+            verfahren = 5;
+           $("#aktuellesVerfahren").html("HRF");
+        });
+        $("#auswahlhrc").click(function(){
+            verfahren = 6;
+           $("#aktuellesVerfahren").html("HRC");
+        });
+        $("#auswahlhra").click(function(){
+            verfahren = 7;
+           $("#aktuellesVerfahren").html("HRA");
+        });
+        $("#auswahlhrd").click(function(){
+            verfahren = 8;
+           $("#aktuellesVerfahren").html("HRD");
+        });
+        $("#auswahlhr15").click(function(){
+            verfahren = 9;
+           $("#aktuellesVerfahren").html("HR15N");
+        });
+        $("#auswahlhr30").click(function(){
+            verfahren = 10;
+           $("#aktuellesVerfahren").html("HR30N");
+        });
+        $("#auswahlhr45").click(function(){
+            verfahren = 11;
+           $("#aktuellesVerfahren").html("HR45N");
 
-
-    if (document.getElementById("auswahlHV")) {
-        document.getElementById("auswahlHV").addEventListener("click", vickers10);
-       };
-    if (document.getElementById("auswahlhb")) {
-        document.getElementById("auswahlhb").addEventListener("click", hbw);
-       };
-    if (document.getElementById("auswahlrm")) {
-       document.getElementById("auswahlrm").addEventListener("click", rm);
-       };  
-    if (document.getElementById("auswahlhrb")) {
-        document.getElementById("auswahlhrb").addEventListener("click", hrb);
-       };
-       if (document.getElementById("auswahlhrf")) {
-        document.getElementById("auswahlhrf").addEventListener("click", hrf);
-       };
-       if (document.getElementById("auswahlhrc")) {
-        document.getElementById("auswahlhrc").addEventListener("click", hrc);
-       };
-       if (document.getElementById("auswahlhra")) {
-        document.getElementById("auswahlhra").addEventListener("click", hra);
-       };
-       if (document.getElementById("auswahlhrd")) {
-        document.getElementById("auswahlhrd").addEventListener("click", hrd);
-       };
-       if (document.getElementById("auswahlhr15")) {
-        document.getElementById("auswahlhr15").addEventListener("click", hr15);
-       };
-       if (document.getElementById("auswahlhr30")) {
-        document.getElementById("auswahlhr30").addEventListener("click", hr30);
-       };
-       if (document.getElementById("auswahlhr45")) {
-        document.getElementById("auswahlhr45").addEventListener("click", hr45);
-       };
+        });
+      });
 
        if (document.getElementById("3_messungen")) {
         document.getElementById("3_messungen").addEventListener("click", drei);
@@ -57,7 +67,7 @@ window.addEventListener("load", function() {
     if (document.getElementById("button")) {
      document.getElementById("button").addEventListener("click", test);
     }
-   });
+   
 
    function eins() {
     anzahl = 0 ;
@@ -78,53 +88,6 @@ function fünf() {
     document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input> <br> <input type="number" id="eingabe_4" class="col-sm-10 "style="margin-top: 10px;"></input>');
  document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input> <br> <input type="number" id="eingabe_5" class="col-sm-10 " style="margin-top: 10px;"></input>');
  document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
-
-function vickers10() {
-    verfahren = 2;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HV10');
-}
-  
-function hbw() {
-    verfahren = 3;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HBW');
-}
-
-function rm() {
-    verfahren = 1;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' MPa');
-}
-function hrb() {
-    verfahren = 4;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HRB');
-}
-function hrf() {
-    verfahren = 5;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HRF');
-}
-function hrc() {
-    verfahren = 6;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HRC');
-}
-function hra() {
-    verfahren = 7;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HRA');
-}
-function hrd() {
-    verfahren = 8;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HRD');
-}
-function hr15() {
-    verfahren = 9;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HR15N');
-}
-function hr30() {
-    verfahren = 10;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HR30N');
-}
-function hr45() {
-    verfahren = 11;
-    document.getElementById("aktuellesVerfahren").innerHTML = (' HR45N');
 }
 
 //Umwertung
