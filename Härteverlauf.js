@@ -52,8 +52,10 @@ function ho(c){
     absRS =2.5*dm;
     absES = 3*dm; 
     zahl2=zahl2/1000;
-    if((zahl2)<=absES){
+    if(zahl2<=absES){
+        if (document.getElementById('verschwinde3')) {
         document.getElementById("verschwinde3").style.display = 'block';
+        }
         anzahlR=2;
         
     absR = Math.sqrt(absES**2)-((zahl2/2)**2);
