@@ -1,5 +1,6 @@
 
 
+
 let verfahren= 0;
 let anzahl = 1 ;
 $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
@@ -80,6 +81,7 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
     }
    
 
+
    function eins() {
     anzahl = 0 ;
     document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
@@ -104,42 +106,49 @@ function fünf() {
 //Umwertung
 
    function test() {
+    eingabe = [];
+     zahl1 = document.getElementById("eingabe_1").value;
+     zahl2 = document.getElementById("eingabe_2").value;
+     zahl3 = document.getElementById("eingabe_3").value;
+     zahl4 = document.getElementById("eingabe_4").value;
+     zahl5 = document.getElementById("eingabe_5").value;
+
+     if (zahl1>0){
+   eingabe.push( parseInt(zahl1));
+}
+if (zahl2>0){
+    eingabe.push( parseInt(zahl2));
+ }
+ if (zahl3>0){
+    eingabe.push( parseInt(zahl3));
+ }
+ if (zahl4>0){
+    eingabe.push( parseInt(zahl4));
+ }
+ if (zahl5>0){
+    eingabe.push( parseInt(zahl5));
+ }
+
+   function ArrayAvg(myArray){
+    
+        var i = 0, summ = 0, ArrayLen = myArray.length;
+        while (i < ArrayLen) {
+          summ = summ + myArray[i++];
+        }
+        a = summ / ArrayLen;
+        mittelwert = a.toFixed(1);
+      
+      $("#härtemittel").html(mittelwert);
+    }
+    ArrayAvg(eingabe)
 
     if (verfahren===0){
         alert('Wählen die ein Verfahren aus.')
-       }
+       
+    }
+
 
     if(verfahren>0){
-        if (anzahl>0){
-     if (anzahl =1){
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-     mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3))/3);
-     mittelwert = mittelwert.toFixed(1)
-    document.getElementById("härtemittel").innerHTML = (mittelwert);
-   
-}
-
-else {
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-    let zahl4 = document.getElementById("eingabe_4").value;
-    let zahl5 = document.getElementById("eingabe_5").value;
-    let mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3)+parseInt(zahl4)+parseInt(zahl5))/5);
-    mittelwert = mittelwert.toFixed(1);
-    document.getElementById("härtemittel").innerHTML = Math.round(mittelwert);
-   
-}}
-else{
-
-  let zahl1 = document.getElementById("eingabe_1").value;
-   let mittelwerd = (zahl1/1);
-  mittelwert = mittelwerd.toFixed(1);
-    $("#härtemittel").html(mittelwert); 
-}
-    }
 
 
   // Vikers
@@ -1250,5 +1259,6 @@ if(verfahren===11){
         document.getElementById("hrc").innerHTML = ('ungültig');
     }  
 }
+    }
+   }
 
-}

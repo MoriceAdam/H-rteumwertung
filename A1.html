@@ -14,11 +14,11 @@
 
 </head>
 <!--background="Karg.png"-->
-  <body  class="bg-secondary">
+  <body  style="background-color: #565656;">
     <!--taskleiste//-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ränder">
       <div class="container-fluid col-12">
-        <a class="navbar-brand ränder" href="#">Härte
+        <a class="navbar-brand " href="#">Härte
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -94,11 +94,11 @@
 
 </div>
 
-      <div class=" bg-dark col-10 ränder " style="height: 100%;">
+      <div class=" bg-dark col-10 shadow-lg p-10 mb-5 " style="height: 100%;">
 
         <div class="row m-0 ">
-          <div class=" col-0 col-lg-1  "></div>
-          <div class="col-12  col-lg-10  text-white " ><h1>Tabelle A1</h1>
+          <div class=" col-0 col-lg-2  "></div>
+          <div class="col-12  col-lg-8  text-white " ><h1>Tabelle A1</h1>
             <p>Umwertung für Härtewerte von unlegierten und niedriglegierte Stählen und Stahlguss.</p>
             <p>Nach DIN EN ISO 18265.</p></div>
             <div class="col-0 col-lg-1  "></div>
@@ -106,15 +106,17 @@
   
           <div class="row m-0">
             <div class=" col-0 col-lg-1"></div>
-                        <div class=" bg-dark col-12 col-lg-10 ränder ">
+                        <div class=" bg-secondary card col-12 col-lg-10 border border-white ">
                           <div class="row m-0">
-                          <div class="col-0 col-sm-12 "> ahll</div>
+                          <div class="col-0 col-sm-12 " style="height: 20px;"> </div>
                           </div >
                           <div class="row m-0">
-                          <div class="dropdown col-12 col-lg-2 text-center " style="margin-bottom:5px;">
-                            <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" >Verfahren
+                            <div class="col-12 col-lg-1 text-white text-center" >Messwerte: </div>
+                            <div class="col-12 col-lg-1">
+                          <div class="dropdown  text-center mittig" style="margin-bottom:5px; width: 110px;">
+                            <button class="btn btn btn-dark dropdown-toggle  " type="button" data-bs-toggle="dropdown" >Verfahren
                             <span class="caret"></span></button>
-                            <ul class="dropdown-menu bg-secondary text-center text-white">
+                            <ul class="dropdown-menu bg-secondary text-center text-white shadow-lg p-10 mb-5">
                             <li id="auswahlrm" >Rm</li>
                             <li id="auswahlHV" >HV10</li>
                             <li id="auswahlhb" >HB</li>
@@ -126,35 +128,41 @@
                             <li id="auswahlhr15">HR15N</li>
                             <li id="auswahlhr30">HR30N</li>
                             <li id="auswahlhr45">HR45N</li>
-                          </ul><br>
-                          <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" style="margin-top: 10px;">Anzahl
-                            <span class="caret"></span></button>
-                            <ul class="dropdown-menu bg-secondary text-white text-center">
-                              <li id="1_messungen" >1</li>
-                              <li id="3_messungen" >3</li>
-                              <li id="5_messungen">5</li>
-                              
-                            </ul>
+                          </ul>
                         </div>
                         
+                          <div class="col-12 col-lg-1 text-center "> <button type="button" class="btn " id="button" style="margin-top: 50px; width: 110px; margin-bottom: 20px; background-color: #661010;color: white;">Umwerten</button></div>
+                               
+                              </div>
                         
-                          <div class="col-12 col-lg-2 text-center " id="feld1">   
-                            <input type="number" id="eingabe_1" class="col-10 " style="margin-top: 10px;" >
-                            </div>
-                      
-                          <div class="col-12 col-lg-2 text-center" id="feld2" >  
-                            <input type="number" id="eingabe_2" class="col-10 " style="margin-top: 10px;">
-                            </div>
-                      
-                        <div class="col-12 col-lg-2 text-center" id="feld3"> 
-                              <input type="number" id="eingabe_3" class="col-10 " style="margin-top: 10px;"> 
+                        
+                          <div class="col-12 col-lg-6 text-center " id="feld1" style="margin-bottom: 40px; ">  
+                            <div class="row m-0"> 
+                              <div class="col-1" style="height: 10px;"></div>
+                            <div class="col-12 col-lg-2" >
+                            <input type="number" id="eingabe_1" class="col-10 text-center" style="margin-top: 10px; width: 80px;"  >
+                            </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_2" class="col-10 text-center" style="margin-top: 10px; width: 80px;">
+                          </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_3" class="col-10 text-center" style="margin-top: 10px; width: 80px;">
+                          </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_4" class="col-10 text-center" style="margin-top: 10px; width: 80px;">
+                          </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_5" class="col-10 text-center" style="margin-top: 10px; width: 80px; margin-bottom: 20px;">
+                          </div>  
                           </div>
-                        
-                            <div class="col-6 col-lg-1 text-center" style="height: 25px;" > <h2 id="härtemittel"  style="color: white;"   ></h2></div>
-                              <div class="col-6 col-lg-1 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
+                          <div class="row m-0" style="margin-bottom: 20px;"> 
+                            <div class="col-6 col-lg-6 text-center" style="height: 25px;" > <h2 id="härtemittel"  style="color: white;"   ></h2></div>
+                            <div class="col-6 col-lg-6 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
+                            </div>
+                          </div>
+                          
+                          
+                               
                       
-                                  <div class="col-12 col-lg-2 text-center"> <button type="button" class="btn btn-secondary " id="button" style="margin-top: 50px;">Umwerten</button></div>
-                                </div>
+                            </div>
+                                
+                        </div>
 
                                 <div class="row">
                                   <div class="col-0 col-sm-12 " style="height: 5vh;"> </div>
@@ -168,80 +176,103 @@
                       
                       <div class=" col-lg-1 "></div>
  <!-------------------------ausgabe------------------------------>   
- <div class=" col-12 col-lg-10 ränder " style="color: white;">
+ <div class=" col-12 col-lg-12  " style="color: white;">
                 
-  <div class="row bg-dark">
+  <div class="row bg-dark" style="font-weight: 700;">
 
-    <div class="col-12 col-lg-2 ränder " >
-      <div class="eHöhe">Ergebnis:</div>
+    <div class="col-12 text-center " >
+      <div class="eHöhe"><h1>Umwertung des Mittelwertes:</h1></div>
         <div></div>
       </div>
 
-    <div class="col-6 col-lg-2 ränder " >
-    <div class="eHöhe">Rm <Br> MPa <Br> [N/mm<sup>2</sup>]</div>
+    <div class="col-6 col-lg-2 " >
+      <div class="card col-8 bg-secondary  ausgabeKarte border border-light">
+    <div class="eHöhe " >Rm <Br> MPa <Br> [N/mm<sup>2</sup>]</div>
       <div id="zug" class="ausgabe" ></div>
     </div>
+    </div>
+    
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Vickers <Br>HV 10</div>
       <div id="vickers" class="ausgabe"></div>
     </div>
+    </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Brinell <Br>HB</div>
       <div id="brinell" class="ausgabe"></div>
     </div>
+    </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HRB</div>
       <div id="hrb" class="ausgabe"></div>
     </div>
+    </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HRF</div>
-      <div id="hrf"></div>
+      <div id="hrf" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HRC</div>
-      <div id="hrc"></div>
+      <div id="hrc" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HRA</div>
-      <div id="hra"></div>
+      <div id="hra" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HRD</div>
-      <div id="hrd"></div>
+      <div id="hrd" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HR15N</div>
-      <div id="hr15n"></div>
+      <div id="hr15n" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class=" col-6 col-lg-2 ränder">
+      <div class=" col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HR30N</div>
-      <div id="hr30n"></div>
+      <div id="hr30n" class="ausgabe"></div>
+    </div>
     </div>
 
-      <div class="col-6 col-lg-2 ränder">
+      <div class="col-6 col-lg-2 ">
+        <div class="card col-8 bg-secondary ausgabeKarte border border-white" >
     <div class="eHöhe">Härte <Br> Rockwell <Br>HR45N</div>
-      <div id="hr45n"></div>
+      <div id="hr45n" class="ausgabe"></div>
+    </div>
       </div>
     </div>
 
 </div>
-</div>
+
 <!----------------------------------ausgabe    ende---------------------------------------> 
 
 <div class="col-0 col-lg-1"></div>
 
 <div class="row ">
   
-  <div class="col-12  bg-dark " style="height: 600px;"  >
+  <div class="col-12  bg-dark " style="height: 100px;"  >
     
   </div>
 
