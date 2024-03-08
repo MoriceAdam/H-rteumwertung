@@ -1,5 +1,17 @@
 
 
+setTimeout(startremove, 3000);
+
+function startremove(){
+     $('.ausgabe').removeClass('starttextDrehen');
+     $('.angabe').removeClass('starttextDrehen');
+     $('.ausgabeKarte').removeClass('startdrehen');
+  }
+
+
+
+
+
 
 let verfahren= 0;
 let anzahl = 1 ;
@@ -63,45 +75,16 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
         });
       });
 
-       if (document.getElementById("3_messungen")) {
-        document.getElementById("3_messungen").addEventListener("click", drei);
-       };
-       if (document.getElementById("5_messungen")) {
-        document.getElementById("5_messungen").addEventListener("click", fünf);
-       };
-       if (document.getElementById("1_messungen")) {
-        document.getElementById("1_messungen").addEventListener("click", eins);
-       };
 
 
 
-
-    if (document.getElementById("button")) {
-     document.getElementById("button").addEventListener("click", test);
+    if (document.getElementById("start")) {
+     document.getElementById("start").addEventListener("click",test);
     }
    
 
 
-   function eins() {
-    anzahl = 0 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
-    document.getElementById("feld2").innerHTML = ('');
-    document.getElementById("feld3").innerHTML = ('');
-   }
-
-   function drei() {
- anzahl = 1 ;
- document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
-
-function fünf() {
-    anzahl = 2 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input> <br> <input type="number" id="eingabe_4" class="col-sm-10 "style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input> <br> <input type="number" id="eingabe_5" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
+   
 
 //Umwertung
 
@@ -150,9 +133,10 @@ if (zahl2>0){
 
     if(verfahren>0){
 
-
+$(".angabe").addClass("textDrehen");
+ $(".ausgabe").addClass("textDrehen");
+ $(".ausgabeKarte").addClass("drehen");
   // Vikers
-
 if(verfahren===2){
   
     
@@ -1259,6 +1243,15 @@ if(verfahren===11){
         document.getElementById("hrc").innerHTML = ('ungültig');
     }  
 }
+
     }
+    setTimeout(remove, 3000);
    }
 
+function remove(){
+    if ($('.ausgabe').hasClass('textDrehen')) {
+        $('.ausgabe').removeClass('textDrehen');
+        $('.angabe').removeClass('textDrehen');
+        $('.ausgabeKarte').removeClass('drehen');
+     }
+}

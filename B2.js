@@ -1,4 +1,12 @@
 
+setTimeout(startremove, 3000);
+
+function startremove(){
+     $('.ausgabe').removeClass('starttextDrehen');
+     $('.angabe').removeClass('starttextDrehen');
+     $('.ausgabeKarte').removeClass('startdrehen');
+  }
+
 
 let verfahren= 0;
 let anzahl = 1 ;
@@ -42,17 +50,17 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
         });
         $("#auswahlhr15n").click(function(){
             verfahren = 7;
-           $("#auswahlhr15n").html("HR15N");
+           $("#aktuellesVerfahren").html("HR15N");
         });
-        $("#auswahlhrd").click(function(){
+        $("#auswahlhrb").click(function(){
             verfahren = 8;
-           $("#auswahlhrb").html("HRB");
+           $("#aktuellesVerfahren").html("HRB");
         });
         $("#auswahlhrf").click(function(){
             verfahren = 9;
            $("#aktuellesVerfahren").html("HRF");
         });
-        $("#aauswahlhr45t").click(function(){
+        $("#auswahlhr45t").click(function(){
             verfahren = 10;
            $("#aktuellesVerfahren").html("HR45T");
         });
@@ -72,84 +80,67 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
         });
       });
 
-       if (document.getElementById("3_messungen")) {
-        document.getElementById("3_messungen").addEventListener("click", drei);
-       };
-       if (document.getElementById("5_messungen")) {
-        document.getElementById("5_messungen").addEventListener("click", fünf);
-       };
-       if (document.getElementById("1_messungen")) {
-        document.getElementById("1_messungen").addEventListener("click", eins);
-       };
 
 
-
-
-    if (document.getElementById("button")) {
-     document.getElementById("button").addEventListener("click", test);
-    }
+      if (document.getElementById("start")) {
+        document.getElementById("start").addEventListener("click",test);
+       }
+      
    
 
-   function eins() {
-    anzahl = 0 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
-    document.getElementById("feld2").innerHTML = ('');
-    document.getElementById("feld3").innerHTML = ('');
-   }
 
-   function drei() {
- anzahl = 1 ;
- document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
-
-function fünf() {
-    anzahl = 2 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input> <br> <input type="number" id="eingabe_4" class="col-sm-10 "style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input> <br> <input type="number" id="eingabe_5" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
 
 //Umwertung
 
    function test() {
+    
+eingabe = [];
+     zahl1 = document.getElementById("eingabe_1").value;
+     zahl2 = document.getElementById("eingabe_2").value;
+     zahl3 = document.getElementById("eingabe_3").value;
+     zahl4 = document.getElementById("eingabe_4").value;
+     zahl5 = document.getElementById("eingabe_5").value;
+
+     if (zahl1>0){
+   eingabe.push( parseInt(zahl1));
+}
+if (zahl2>0){
+    eingabe.push( parseInt(zahl2));
+ }
+ if (zahl3>0){
+    eingabe.push( parseInt(zahl3));
+ }
+ if (zahl4>0){
+    eingabe.push( parseInt(zahl4));
+ }
+ if (zahl5>0){
+    eingabe.push( parseInt(zahl5));
+ }
+
+   function ArrayAvg(myArray){
+    
+        var i = 0, summ = 0, ArrayLen = myArray.length;
+        while (i < ArrayLen) {
+          summ = summ + myArray[i++];
+        }
+        a = summ / ArrayLen;
+        mittelwert = a.toFixed(1);
+      
+      $("#härtemittel").html(mittelwert);
+    }
+    ArrayAvg(eingabe)
 
     if (verfahren===0){
         alert('Wählen die ein Verfahren aus.')
-       }
+       
+    }
+
 
     if(verfahren>0){
-        if (anzahl>0){
-     if (anzahl =1){
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-     mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3))/3);
-     mittelwert = mittelwert.toFixed(1)
-    document.getElementById("härtemittel").innerHTML = (mittelwert);
-   
-}
 
-else {
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-    let zahl4 = document.getElementById("eingabe_4").value;
-    let zahl5 = document.getElementById("eingabe_5").value;
-    let mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3)+parseInt(zahl4)+parseInt(zahl5))/5);
-    mittelwert = mittelwert.toFixed(1);
-    document.getElementById("härtemittel").innerHTML = Math.round(mittelwert);
-   
-}}
-else{
-
-    let zahl1 = document.getElementById("eingabe_1").value;
-     let mittelwerd = (zahl1/1);
-    mittelwert = mittelwerd.toFixed(1);
-      $("#härtemittel").html(mittelwert); 
-  }
-      }
+$(".angabe").addClass("textDrehen");
+ $(".ausgabe").addClass("textDrehen");
+ $(".ausgabeKarte").addClass("drehen");
 
   // Vikers
 
@@ -850,7 +841,7 @@ if(verfahren===7){
     document.getElementById("hr15n").innerHTML = (mittelwert);
 
     if (mittelwert>=36.1 && mittelwert<=75){
-        let hv = ( 0.0000000554556960352670000000000000000000*mittelwert**6 - 0.0000184634581417598000000000000000000000*mittelwert**5 + 0.0026061338802513900000000000000000000000*mittelwert**4 - 0.1954172718399090000000000000000000000000*mittelwert**3 + 8.2435432557388000000000000000000000000000*mittelwert**2 - 180.9012469699880000000000000000000000000000*mittelwert + 1774.2288319501900000000000000000000000000000);
+        let hv = ( 0.00000154257444684447000000000000000*mittelwert**6 - 0.00068920696105152500000000000000000*mittelwert**5 + 0.12858470488321100000000000000000000*mittelwert**4 - 12.80660810014180000000000000000000000*mittelwert**3 + 717.69540503603600000000000000000000000*mittelwert**2 - 21445.19841362500000000000000000000000000*mittelwert + 266922.04935837500000000000000000000000000);
         hv = hv.toFixed(1);
         $("#vickers").html(hv);
     }
@@ -860,7 +851,7 @@ if(verfahren===7){
     } 
  
     if (mittelwert>=36.1 && mittelwert<=75){
-    let HB = ( 0.00000006499532989590050000000000000*mittelwert**6 - 0.00002327570160300940000000000000000*mittelwert**5 + 0.00347931683776881000000000000000000*mittelwert**4 - 0.27359409137406000000000000000000000*mittelwert**3 + 11.97978103187070000000000000000000000*mittelwert**2 - 272.27186358783100000000000000000000000*mittelwert + 2667.56898687800000000000000000000000000);
+    let HB = ( 0.00000114932573147541000000000000000*mittelwert**6 - 0.00052905278670749600000000000000000*mittelwert**5 + 0.10183846941511200000000000000000000*mittelwert**4 - 10.47337473292950000000000000000000000*mittelwert**3 + 606.35752472605300000000000000000000000*mittelwert**2 - 18721.27659772230000000000000000000000000*mittelwert + 240770.66603263400000000000000000000000000);
     HB = HB.toFixed(1);
     $("#brinell").html(HB);
     }
@@ -869,7 +860,7 @@ if(verfahren===7){
     document.getElementById("brinell").innerHTML = ('ungültig');
     } 
     if (mittelwert>=36.1 && mittelwert<=75){
-    let hrc = ( 0.000000014121830774205300000000*mittelwert**6 - 0.000004915890410869820000000000*mittelwert**5 + 0.000705498525822695000000000000*mittelwert**4 - 0.053400750272090000000000000000*mittelwert**3 + 2.248306176810460000000000000000*mittelwert**2 - 48.854867591606800000000000000000*mittelwert + 433.212596881671000000000000000000);
+    let hrc = ( 0.00000005662763180591670000000000000*mittelwert**6 - 0.00002642167784356890000000000000000*mittelwert**5 + 0.00512373707252687000000000000000000*mittelwert**4 - 0.52850771337948000000000000000000000*mittelwert**3 + 30.58902251933410000000000000000000000*mittelwert**2 - 940.65639220250500000000000000000000000*mittelwert + 11984.61692641910000000000000000000000000);
     hrc = hrc.toFixed(1);
     $("#hrc").html(hrc);
 }
@@ -878,7 +869,7 @@ else{
     document.getElementById("hrc").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=75){
-    let hra = ( 0.0000000038146736811017800000000*mittelwert**6 - 0.0000013448098117388500000000000*mittelwert**5 + 0.0001954912250673610000000000000*mittelwert**4 - 0.0149886596942620000000000000000*mittelwert**3 + 0.6382443030623560000000000000000*mittelwert**2 - 13.6905915625088000000000000000000*mittelwert + 166.8163136476100000000000000000000);
+    let hra = ( -0.00000004870702818848830000000000000*mittelwert**6 + 0.00002297352842113300000000000000000*mittelwert**5 - 0.00450591160287637000000000000000000*mittelwert**4 + 0.47039526183841600000000000000000000*mittelwert**3 - 27.56427194787200000000000000000000000*mittelwert**2 + 860.41103700959900000000000000000000000*mittelwert - 11142.15764822620000000000000000000000000);
     hra = hra.toFixed(1);
     $("#hra").html(hra);
 }
@@ -887,7 +878,7 @@ else{
     document.getElementById("hra").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=75){
-    let h45n = ( 0.0000000151932855463333000000000*mittelwert**6 - 0.0000053187752655670100000000000*mittelwert**5 + 0.0007671199828018270000000000000*mittelwert**4 - 0.0583119552897087000000000000000*mittelwert**3 + 2.4631907990133500000000000000000*mittelwert**2 - 53.5514343876615000000000000000000*mittelwert + 469.5481293659730000000000000000000);
+    let h45n = ( 0.00000002528502163201550000000000000*mittelwert**6 - 0.00001206418104366950000000000000000*mittelwert**5 + 0.00238717060905067000000000000000000*mittelwert**4 - 0.25068355595178000000000000000000000*mittelwert**3 + 14.74277887082220000000000000000000000*mittelwert**2 - 458.88444038507700000000000000000000000*mittelwert + 5874.77598125904000000000000000000000000);
     h45n = h45n.toFixed(1);
     $("#hr45n").html(h45n);
 }
@@ -895,6 +886,17 @@ if (mittelwert>=36.1 && mittelwert<=75){
 else{
     document.getElementById("hr45n").innerHTML = ('ungültig');
 } 
+
+if (mittelwert>=36.1 && mittelwert<=75){
+    let h30n = ( -0.00000022652539111156500000000000000*mittelwert**6 + 0.00010704986039709000000000000000000*mittelwert**5 - 0.02103481293064550000000000000000000*mittelwert**4 + 2.19975843331253000000000000000000000*mittelwert**3 - 129.11751231708400000000000000000000000*mittelwert**2 + 4034.26495099705000000000000000000000000*mittelwert - 52418.73684504780000000000000000000000000);
+    h30n = h30n.toFixed(1);
+    $("#hr30n").html(h30n);
+    }
+
+    else{
+    document.getElementById("hr30n").innerHTML = ('ungültig');
+    } 
+/*
 if (mittelwert>=36.1 && mittelwert<=75){
     let h15n = ( 0.0000000073305329237327600000000*mittelwert**6 - 0.0000025662000803131100000000000*mittelwert**5 + 0.0003705242386094880000000000000*mittelwert**4 - 0.0282235287023457000000000000000*mittelwert**3 + 1.1936629195109000000000000000000*mittelwert**2 - 25.8727397044448000000000000000000*mittelwert + 283.2455686984460000000000000000000);
     h15n = h15n.toFixed(1);
@@ -904,8 +906,9 @@ if (mittelwert>=36.1 && mittelwert<=75){
 else{
     document.getElementById("hr15n").innerHTML = ('ungültig');
 } 
+*/
 if (mittelwert>=36.1 && mittelwert<=61.4){
-    let hrb = ( -0.000000057967127764513300000000*mittelwert**6 + 0.000015188004290900300000000000*mittelwert**5 - 0.001602333709732450000000000000*mittelwert**4 + 0.086153213934346600000000000000*mittelwert**3 - 2.449827660399870000000000000000*mittelwert**2 + 34.766102873354100000000000000000*mittelwert - 102.290890698656000000000000000000);
+    let hrb = ( -0.00000132729434909606000000000000000*mittelwert**6 + 0.00058278700280993700000000000000000*mittelwert**5 - 0.10646221480266700000000000000000000*mittelwert**4 + 10.35693175150710000000000000000000000*mittelwert**3 - 565.91651797117800000000000000000000000*mittelwert**2 + 16470.00080670940000000000000000000000000*mittelwert - 199412.79439726900000000000000000000000000);
     hrb = hrb.toFixed(1);
     $("#hrb").html(hrb);
 }
@@ -914,7 +917,7 @@ else{
     document.getElementById("hrb").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=61.4){
-    let hrf = ( 0.000000130041849066842000000000*mittelwert**6 - 0.000039630298041837300000000000*mittelwert**5 + 0.005004921051271140000000000000*mittelwert**4 - 0.335159999752956000000000000000*mittelwert**3 + 12.543393295649800000000000000000*mittelwert**2 - 248.058357108064000000000000000000*mittelwert + 2128.347512213180000000000000000000);
+    let hrf = ( 0.00000158482808032545000000000000000*mittelwert**6 - 0.00070229295449451000000000000000000*mittelwert**5 + 0.12953122571010700000000000000000000*mittelwert**4 - 12.72788797241220000000000000000000000*mittelwert**3 + 702.71421791961000000000000000000000000*mittelwert**2 - 20667.58276281840000000000000000000000000*mittelwert + 253056.43289002400000000000000000000000000);
     hrf = hrf.toFixed(1);
     $("#hrf").html(hrf);
 }
@@ -923,7 +926,7 @@ else{
     document.getElementById("hrf").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=61.4){
-    let hr45t = ( -0.000000006621270531859120000000*mittelwert**6 - 0.000000379964424612744000000000*mittelwert**5 + 0.000347204259400441000000000000*mittelwert**4 - 0.042923275358536900000000000000*mittelwert**3 + 2.310730416359180000000000000000*mittelwert**2 - 57.731230223129100000000000000000*mittelwert + 605.802423728184000000000000000000);
+    let hr45t = ( -0.00000055300874102215400000000000000*mittelwert**6 + 0.00023921897582823700000000000000000*mittelwert**5 - 0.04305131455927120000000000000000000*mittelwert**4 + 4.12567050603888000000000000000000000*mittelwert**3 - 222.06739096309100000000000000000000000*mittelwert**2 + 6368.34024694306000000000000000000000000*mittelwert - 76017.94875925140000000000000000000000000);
     hr45t = hr45t.toFixed(1);
     $("#hr45t").html(hr45t);
 }
@@ -933,7 +936,7 @@ else{
 } 
 
 if (mittelwert>=36.1 && mittelwert<=61.4){
-    let hr30t = ( 0.000000052274143236275000000000*mittelwert**6 - 0.000016332151559872400000000000*mittelwert**5 + 0.002116340691523840000000000000*mittelwert**4 - 0.145506823106354000000000000000*mittelwert**3 + 5.582377566503400000000000000000*mittelwert**2 - 112.217413444704000000000000000000*mittelwert + 989.696102595356000000000000000000);
+    let hr30t = ( 0.00000067849325091629000000000000000*mittelwert**6 - 0.00029434851060159400000000000000000*mittelwert**5 + 0.05312528611268590000000000000000000*mittelwert**4 - 5.10606743682230000000000000000000000*mittelwert**3 + 275.62039915631600000000000000000000000*mittelwert**2 - 7920.01917565962000000000000000000000000*mittelwert + 94674.41673824270000000000000000000000000);
     hr30t = hr30t.toFixed(1);
     $("#hr30t").html(hr30t);
 }
@@ -942,7 +945,7 @@ else{
     document.getElementById("hr30t").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=61.4){
-    let hr15t = ( 0.000000078779252787875000000000*mittelwert**6 - 0.000024252394529100700000000000*mittelwert**5 + 0.003089019494754820000000000000*mittelwert**4 - 0.208314331615182000000000000000*mittelwert**3 + 7.836192375419100000000000000000*mittelwert**2 - 155.349774369207000000000000000000*mittelwert + 1351.779682331140000000000000000000);
+    let hr15t = ( 0.00000082304421766821200000000000000*mittelwert**6 - 0.00036624137268290700000000000000000*mittelwert**5 + 0.06780529862460300000000000000000000*mittelwert**4 - 6.68537339692650000000000000000000000*mittelwert**3 + 370.22341009536700000000000000000000000*mittelwert**2 - 10917.10717625820000000000000000000000000*mittelwert + 133984.20296270000000000000000000000000000);
     hr15t = hr15t.toFixed(1);
     $("#hr15t").html(hr15t);
 }
@@ -951,7 +954,7 @@ else{
     document.getElementById("hr15t").innerHTML = ('ungültig');
 } 
 if (mittelwert>=36.1 && mittelwert<=65.8){
-    let rm = ( 0.000000975205910247467000000000*mittelwert**6 - 0.000316181477449806000000000000*mittelwert**5 + 0.042422598074500800000000000000*mittelwert**4 - 3.006664566445250000000000000000*mittelwert**3 + 118.890827865618000000000000000000*mittelwert**2 - 2473.377535910710000000000000000000*mittelwert + 21630.123957386200000000000000000000);
+    let rm = ( -0.00000706888249624171000000000000000*mittelwert**6 + 0.00323005438731343000000000000000000*mittelwert**5 - 0.61235453399385700000000000000000000*mittelwert**4 + 61.69790477335860000000000000000000000*mittelwert**3 - 3485.60606796473000000000000000000000000*mittelwert**2 + 104722.88601401300000000000000000000000000*mittelwert - 1307206.42369923000000000000000000000000000);
     rm = rm.toFixed(1);
     $("#zug").html(rm);
 }
@@ -960,8 +963,133 @@ else{
     document.getElementById("zug").innerHTML = ('ungültig');
 } 
 }
+//HRB
+if(verfahren===8){
+   
 
+   
+    document.getElementById("hrb").innerHTML = (mittelwert);
 
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let hv = ( 0.00000576663531504096000000000000000*mittelwert**6 - 0.00358814412689696000000000000000000*mittelwert**5 + 0.93010879478813100000000000000000000*mittelwert**4 - 128.54840524752300000000000000000000000*mittelwert**3 + 9989.66480167085000000000000000000000000*mittelwert**2 - 413835.38226610900000000000000000000000000*mittelwert + 7139462.14778143000000000000000000000000000);
+        hv = hv.toFixed(1);
+        $("#vickers").html(hv);
+        }
+        else{
+        document.getElementById("vickers").innerHTML = ('ungültig');
+        } 
+    
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let HB = ( 0.00000653157473351484000000000000000*mittelwert**6 - 0.00401232668783109000000000000000000*mittelwert**5 + 1.02655029682376000000000000000000000*mittelwert**4 - 140.00503619080900000000000000000000000*mittelwert**3 + 10734.62519130000000000000000000000000000*mittelwert**2 - 438699.57123652200000000000000000000000000*mittelwert + 7465638.98298601000000000000000000000000000);
+        HB = HB.toFixed(1);
+        $("#brinell").html(HB);
+        }
+        else{
+        document.getElementById("brinell").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let hrc = ( 0.00000059960019216376300000000000000*mittelwert**6 - 0.00037388080147273700000000000000000*mittelwert**5 + 0.09705798474878230000000000000000000*mittelwert**4 - 13.42588522106240000000000000000000000*mittelwert**3 + 1043.70861131500000000000000000000000000*mittelwert**2 - 43231.51847479900000000000000000000000000*mittelwert + 745381.50761662300000000000000000000000000);
+        hrc = hrc.toFixed(1);
+        $("#hrc").html(hrc);
+        }
+        else{
+        document.getElementById("hrc").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let hra = ( 0.00000073106606102157900000000000000*mittelwert**6 - 0.00045719190924131700000000000000000*mittelwert**5 + 0.11902532884075600000000000000000000*mittelwert**4 - 16.51116645276990000000000000000000000*mittelwert**3 + 1287.15326693882000000000000000000000000*mittelwert**2 - 53464.30752232080000000000000000000000000*mittelwert + 924445.32028737900000000000000000000000000);
+        hra = hra.toFixed(1);
+        $("#hra").html(hra);
+        }
+    else{
+        document.getElementById("hra").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let h45n = ( 0.00000086006970922980500000000000000*mittelwert**6 - 0.00053677183172631300000000000000000*mittelwert**5 + 0.13946224759390300000000000000000000*mittelwert**4 - 19.30747120220490000000000000000000000*mittelwert**3 + 1502.13507487223000000000000000000000000*mittelwert**2 - 62268.71959155440000000000000000000000000*mittelwert + 1074436.70022507000000000000000000000000000);
+        h45n = h45n.toFixed(1);
+        $("#hr45n").html(h45n);
+        }
+        else{
+        document.getElementById("hr45n").innerHTML = ('ungültig');
+        } 
+
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let h30n = ( 0.00000144314157557446000000000000000*mittelwert**6 - 0.00089939737588231600000000000000000*mittelwert**5 + 0.23329660608441500000000000000000000*mittelwert**4 - 32.23863783969600000000000000000000000*mittelwert**3 + 2503.06094482469000000000000000000000000*mittelwert**2 - 103528.18184921700000000000000000000000000*mittelwert + 1782060.06728819000000000000000000000000000);
+        h30n = h30n.toFixed(1);
+        $("#hr30n").html(h30n);
+        }
+        else{
+        document.getElementById("hr30n").innerHTML = ('ungültig');
+        } 
+
+    if (mittelwert>=36.1 && mittelwert<=75){
+        let h15n = ( 0.00000040702205605924700000000000000*mittelwert**6 - 0.00025571166536408900000000000000000*mittelwert**5 + 0.06687813315148010000000000000000000*mittelwert**4 - 9.31993377854482000000000000000000000*mittelwert**3 + 729.88004848163900000000000000000000000*mittelwert**2 - 30455.27244767930000000000000000000000000*mittelwert + 529010.76340090900000000000000000000000000);
+        h15n = h15n.toFixed(1);
+        $("#hr15n").html(h15n);
+        }
+        else{
+        document.getElementById("hr15n").innerHTML = ('ungültig');
+        } 
+    /*
+    if (mittelwert>=36.1 && mittelwert<=61.4){
+        let hrb = ( -0.000000057967127764513300000000*mittelwert**6 + 0.000015188004290900300000000000*mittelwert**5 - 0.001602333709732450000000000000*mittelwert**4 + 0.086153213934346600000000000000*mittelwert**3 - 2.449827660399870000000000000000*mittelwert**2 + 34.766102873354100000000000000000*mittelwert - 102.290890698656000000000000000000);
+        hrb = hrb.toFixed(1);
+        $("#hrb").html(hrb);
+        }
+        else{
+        document.getElementById("hrb").innerHTML = ('ungültig');
+        }
+    */ 
+    if (mittelwert>=36.1 && mittelwert<=61.4){
+        let hrf = ( 0.00000050690818476084600000000000000*mittelwert**6 - 0.00032071613587305600000000000000000*mittelwert**5 + 0.08447413377978280000000000000000000*mittelwert**4 - 11.85615344652880000000000000000000000*mittelwert**3 + 935.19412639694400000000000000000000000*mittelwert**2 - 39306.60009440550000000000000000000000000*mittelwert + 687825.30875070200000000000000000000000000);
+        hrf = hrf.toFixed(1);
+        $("#hrf").html(hrf);
+        }
+
+        else{
+        document.getElementById("hrf").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=61.4){
+        let hr45t = ( 0.00000050690818476084600000000000000*mittelwert**6 - 0.00032071613587305600000000000000000*mittelwert**5 + 0.08447413377978280000000000000000000*mittelwert**4 - 11.85615344652880000000000000000000000*mittelwert**3 + 935.19412639694400000000000000000000000*mittelwert**2 - 39306.60009440550000000000000000000000000*mittelwert + 687825.30875070200000000000000000000000000);
+        hr45t = hr45t.toFixed(1);
+        $("#hr45t").html(hr45t);
+        }
+        else{
+        document.getElementById("hr45t").innerHTML = ('ungültig');
+        } 
+
+    if (mittelwert>=36.1 && mittelwert<=61.4){
+        let hr30t = ( 0.00000080201982299854500000000000000*mittelwert**6 - 0.00050259584247953600000000000000000*mittelwert**5 + 0.13109511206140800000000000000000000*mittelwert**4 - 18.21817335977560000000000000000000000*mittelwert**3 + 1422.66261843765000000000000000000000000*mittelwert**2 - 59190.20337695560000000000000000000000000*mittelwert + 1025076.28909679000000000000000000000000000);
+        hr30t = hr30t.toFixed(1);
+        $("#hr30t").html(hr30t);
+        }
+        else{
+        document.getElementById("hr30t").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=61.4){
+        let hr15t = ( 0.00000015212856396829000000000000000*mittelwert**6 - 0.00009833183498813010000000000000000*mittelwert**5 + 0.02641894991884330000000000000000000*mittelwert**4 - 3.77702353103574000000000000000000000*mittelwert**3 + 303.08906740521800000000000000000000000*mittelwert**2 - 12944.28929452520000000000000000000000000*mittelwert + 229948.01856678500000000000000000000000000);
+        hr15t = hr15t.toFixed(1);
+        $("#hr15t").html(hr15t);
+        }
+        else{
+        document.getElementById("hr15t").innerHTML = ('ungültig');
+        } 
+    if (mittelwert>=36.1 && mittelwert<=65.8){
+        let rm = ( 0.00003140285470237810000000000000000*mittelwert**6 - 0.01963951819833480000000000000000000*mittelwert**5 + 5.11516796720574000000000000000000000*mittelwert**4 - 710.12346824479600000000000000000000000*mittelwert**3 + 55418.34158534410000000000000000000000000*mittelwert**2 - 2305026.74620161000000000000000000000000000*mittelwert + 39919006.88708810000000000000000000000000000);
+        rm = rm.toFixed(1);
+        $("#zug").html(rm);
+        }
+        else{
+        document.getElementById("zug").innerHTML = ('ungültig');
+        } 
 }
 
-
+setTimeout(remove, 3000);
+}
+}
+function remove(){
+ if ($('.ausgabe').hasClass('textDrehen')) {
+     $('.ausgabe').removeClass('textDrehen');
+     $('.angabe').removeClass('textDrehen');
+     $('.ausgabeKarte').removeClass('drehen');
+  }
+}
