@@ -1,5 +1,15 @@
 
 
+
+setTimeout(startremove, 3000);
+
+function startremove(){
+     $('.ausgabe').removeClass('starttextDrehen');
+     $('.angabe').removeClass('starttextDrehen');
+     $('.ausgabeKarte').removeClass('startdrehen');
+  }
+
+
 let verfahren= 0;
 let anzahl = 1 ;
 
@@ -239,44 +249,10 @@ $(document).ready(function(){
   });
 
 
-       if (document.getElementById("3_messungen")) {
-        document.getElementById("3_messungen").addEventListener("click", drei);
-       };
-       if (document.getElementById("5_messungen")) {
-        document.getElementById("5_messungen").addEventListener("click", fünf);
-       };
-       if (document.getElementById("1_messungen")) {
-        document.getElementById("1_messungen").addEventListener("click", eins);
-       };
-
-
-
-
     if (document.getElementById("button")) {
      document.getElementById("button").addEventListener("click", test);
     }
-   
 
-   function eins() {
-    anzahl = 0 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
-    document.getElementById("feld2").innerHTML = ('');
-    document.getElementById("feld3").innerHTML = ('');
-   }
-
-   function drei() {
- anzahl = 1 ;
- document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
-
-function fünf() {
-    anzahl = 2 ;
-    document.getElementById("feld1").innerHTML = ('<input type="number" id="eingabe_1" class="col-sm-10 " style="margin-top: 10px;"></input> <br> <input type="number" id="eingabe_4" class="col-sm-10 "style="margin-top: 10px;"></input>');
- document.getElementById("feld2").innerHTML = ('<input type="number" id="eingabe_2" class="col-sm-10 " style="margin-top: 10px;"> </input> <br> <input type="number" id="eingabe_5" class="col-sm-10 " style="margin-top: 10px;"></input>');
- document.getElementById("feld3").innerHTML = ('<input type="number" id="eingabe_3" class="col-sm-10 " style="margin-top: 10px;"></input>');
-}
 
 function hu(k,s,d){
     vickersTiefe=(k-mittelwert)*s;
@@ -349,47 +325,57 @@ x =Math.PI;
     if (verfahren===0){
         alert('Wählen die ein Verfahren aus.')
        }
-
-    if(verfahren>0){
-        if (anzahl>0){
-     if (anzahl =1){
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-     mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3))/3);
-     mittelwert = mittelwert.toFixed(1)
-    document.getElementById("härtemittel").innerHTML = (mittelwert);
-   
-}
-
-else {
-    let zahl1 = document.getElementById("eingabe_1").value;
-    let zahl2 = document.getElementById("eingabe_2").value;
-    let zahl3 = document.getElementById("eingabe_3").value;
-    let zahl4 = document.getElementById("eingabe_4").value;
-    let zahl5 = document.getElementById("eingabe_5").value;
-    let mittelwert = ((parseInt(zahl1)+parseInt(zahl2)+parseInt(zahl3)+parseInt(zahl4)+parseInt(zahl5))/5);
-    mittelwert = mittelwert.toFixed(1);
-    document.getElementById("härtemittel").innerHTML = Math.round(mittelwert);
-   
-}}
-else{
-
-  let zahl1 = document.getElementById("eingabe_1").value;
-   mittelwert = zahl1;
-   
-    document.getElementById("härtemittel").innerHTML = (mittelwert); 
-}
-    }
+       
+       eingabe = [];
+       zahl1 = document.getElementById("eingabe_1").value;
+       zahl2 = document.getElementById("eingabe_2").value;
+       zahl3 = document.getElementById("eingabe_3").value;
+       zahl4 = document.getElementById("eingabe_4").value;
+       zahl5 = document.getElementById("eingabe_5").value;
+  
+       if (zahl1>0){
+     eingabe.push( parseInt(zahl1));
+  }
+  if (zahl2>0){
+      eingabe.push( parseInt(zahl2));
+   }
+   if (zahl3>0){
+      eingabe.push( parseInt(zahl3));
+   }
+   if (zahl4>0){
+      eingabe.push( parseInt(zahl4));
+   }
+   if (zahl5>0){
+      eingabe.push( parseInt(zahl5));
+   }
+  
+     function ArrayAvg(myArray){
+      
+          var i = 0, summ = 0, ArrayLen = myArray.length;
+          while (i < ArrayLen) {
+            summ = summ + myArray[i++];
+          }
+          a = summ / ArrayLen;
+          mittelwert = a.toFixed(1);
+        
+        $("#härtemittel").html(mittelwert);
+      }
+      ArrayAvg(eingabe)
+     
 
     if(verfahren>=10){
         document.getElementById("verschwinde1").style.display = 'none';
             document.getElementById("verschwinde2").style.display = 'none';
         }
+       
     if(verfahren<10){
             document.getElementById("verschwinde1").style.display = 'block';
                 document.getElementById("verschwinde2").style.display = 'block';
             }
+ 
+            $(".angabe").addClass("textDrehen");
+ $(".ausgabe").addClass("textDrehen");
+ $(".ausgabeKarte").addClass("drehen");
   // Vikers
 
 if(verfahren===1){
@@ -701,5 +687,13 @@ if(dm>0.01){
         absENE=absENE.toFixed(3);
         document.getElementById("abstand4").innerHTML=(absENE + 'µm'); 
     }
+    setTimeout(remove, 3000);
+   }
+
+function remove(){
+    if ($('.ausgabe').hasClass('textDrehen')) {
+        $('.ausgabe').removeClass('textDrehen');
+        $('.angabe').removeClass('textDrehen');
+        $('.ausgabeKarte').removeClass('drehen');
+     }
 }
-   

@@ -1,3 +1,13 @@
+ 
+setTimeout(startremove, 3000);
+
+function startremove(){
+     $('.ausgabe').removeClass('starttextDrehen');
+     $('.angabe').removeClass('starttextDrehen');
+     $('.ausgabeKarte').removeClass('startdrehen');
+  }
+
+
 
  verfahren= 0;
 
@@ -35,10 +45,9 @@ $(document).ready(function(){
 
 
 
-    if (document.getElementById("button")) {
-     document.getElementById("button").addEventListener("click", test);
-    }
-   
+  if (document.getElementById("start")) {
+    document.getElementById("start").addEventListener("click",test);
+   }
 
    
 
@@ -91,6 +100,9 @@ else{
 }
   
 
+$(".angabe").addClass("textDrehen");
+ $(".ausgabe").addClass("textDrehen");
+ $(".ausgabeKarte").addClass("drehen");
   // Vikers
 
 
@@ -110,7 +122,7 @@ if(verfahren===5){
     ho(0.027824249);
 }
 
-
+document.getElementById("anzahlReihen").innerHTML=(anzahlR); 
 if(dMin>0.01){
     dMin=dMin.toFixed(3);
     document.getElementById("mindestdicke").innerHTML=(dMin + 'mm');
@@ -120,13 +132,16 @@ if(dMin<=0.01){
     dMin=dMin.toFixed(3);
     document.getElementById("mindestdicke").innerHTML=(dMin + 'µm'); 
 }
+
     absRS=absRS*1000
     absRS=absRS.toFixed(3);
     document.getElementById("abstand1").innerHTML=(absRS + 'µm'); 
 
+    if(anzahlR=2){
     absR=absR*1000
     absR=absR.toFixed(3);
     document.getElementById("abstandReihen").innerHTML=(absR + 'µm'); 
+   }
 
 if(dm>0.01){
     dm=dm.toFixed(3);
@@ -137,8 +152,15 @@ if(dm<=0.01){
     dm=dm.toFixed(3);
     document.getElementById("eindruckdiagonale").innerHTML=(dm + 'µm'); 
 }
-document.getElementById("anzahlReihen").innerHTML=(anzahlR); 
 
+
+setTimeout(remove, 3000);
 }
 
-   
+function remove(){
+ if ($('.ausgabe').hasClass('textDrehen')) {
+     $('.ausgabe').removeClass('textDrehen');
+     $('.angabe').removeClass('textDrehen');
+     $('.ausgabeKarte').removeClass('drehen');
+  }
+}

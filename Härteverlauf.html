@@ -13,11 +13,11 @@
 
 </head>
 <!--background="Karg.png"-->
-  <body  class="bg-secondary">
+  <body  style="background-color: #565656;">
     <!--taskleiste//-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark ränder">
       <div class="container-fluid col-12">
-        <a class="navbar-brand ränder" href="#">Härte
+        <a class="navbar-brand " href="#">Härte
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -76,9 +76,8 @@
               <a class="nav-link text-warning" href="index.html">G2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Härteverlauf.html">Härteverlauf</a>
-              </li>
-        
+              <a class="nav-link " href="Härteverlauf.html">Härteverlauf</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -94,27 +93,29 @@
 
 </div>
 
-      <div class=" bg-dark col-10  inhalt ränder ">
+      <div class=" bg-dark col-10 shadow-lg p-10 mb-5 " style="height: 100%;">
 
         <div class="row m-0 ">
-          <div class=" col-0 col-lg-1  "></div>
+          <div class=" col-0 col-lg-2  "></div>
           <div class="col-12  col-lg-10  text-white " ><h1>Härteverlauf</h1>
             <p>Berechnung der Reihenanzahl und deren Abstand </p>
             <p>bei einem Härteverlauf.</p></div>
-          <div class="col-0 col-lg-1  "></div>
-        </div>
-
-        <div class="row m-0">
-          <div class=" col-0 col-lg-1"></div>
-                      <div class=" bg-dark col-12 col-lg-10 ränder ">
-                        <div class="row m-0">
-                        <div class="col-0 col-sm-12 "> ahll</div>
-                        </div >
-                        <div class="row m-0">
-                        <div class="dropdown col-12 col-lg-2 text-center " style="margin-bottom:5px;">
-                          <button class="btn btn btn-secondary dropdown-toggle  " type="button" data-bs-toggle="dropdown" >Verfahren
-                          <span class="caret"></span></button>
-                          <ul class="dropdown-menu bg-secondary text-center">
+            <div class="col-0 col-lg-1  "></div>
+          </div>
+  
+          <div class="row m-0">
+            <div class=" col-0 col-lg-1"></div>
+                        <div class=" bg-secondary card col-12 col-lg-10 border border-white ">
+                          <div class="row m-0">
+                          <div class="col-0 col-sm-12 " style="height: 20px;"> </div>
+                          </div >
+                          <div class="row m-0">
+                            <div class="col-6 col-lg-2 text-white text-center" >Messwerte: </div>
+                            <div class="col-6 col-lg-1">
+                          <div class="dropdown  text-center mittig" style="margin-bottom:5px; width: 110px;">
+                            <button class="btn btn btn-dark dropdown-toggle  mittig" type="button" data-bs-toggle="dropdown" >Verfahren
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu bg-secondary text-center text-white shadow-lg p-10 mb-5">
                                 <li>
                                   <a class="dropdown-item text-white" id="auswahlHV1">HV1</a>
                                 </li>
@@ -133,78 +134,109 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="col-12 col-lg-1 text-center "> <button type="button" class="btn startknopf" id="start" style="margin-top: 50px; width: 110px; margin-bottom: 20px; background-color: #661010;color: white;">Berechnen</button></div>
+                               
+                              </div>
                         
                         
-                          <div class="col-12 col-lg-3 text-center ränder " id="feld1" > 
-                            <div class="gegenstand " ><p class="text-white "  >Grenzhärte</p> </div>
-                            <div><input type="number" id="eingabe_1" class="col-10 " style="margin-top: 10px;" ></div>
-                            </div>
-                      
-                          <div class="col-12 col-lg-3 text-center ränder" id="feld2" > 
+                          <div class="col-12 col-lg-6 text-center " id="feld1" style="margin-bottom: 40px; ">  
+                            <div class="row m-0"> 
+                              <div class="col-1" style="height: 10px;"></div>
+                            <div class="col-12 col-lg-2" >
+                              <div class="gegenstand " ><p class="text-white "  >Grenzhärte</p> </div>
+                            </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_1" class="col-10 text-center" style="margin-top: 10px; width: 80px;">
+                          </div><div class="col-12 col-lg-2">
+
+                          </div><div class="col-12 col-lg-2">
                             <div class="gegenstand"><p class="text-white align-bottom"  >Abstand der Messpunkte [μm]</p></div>
-                            <div ><input type="number" id="eingabe_2" class="col-10 " style="margin-top: 10px;"></div>
+                          </div><div class="col-12 col-lg-2">
+                            <input type="number" id="eingabe_2" class="col-10 text-center" style="margin-top: 10px; width: 80px; margin-bottom: 20px;">
+                          </div>  
+                          </div>
+                          <div class="row m-0" style="margin-bottom: 20px;"> 
+                            <div class="col-6 col-lg-6 text-center" style="height: 25px;" > <h2 id="härtemittel"  style="color: white;"   ></h2></div>
+                            <div class="col-6 col-lg-6 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
                             </div>
+                          </div>
+                          
+                          
+                               
                       
-                      
-                        
-                            <div class="col-6 col-lg-1 text-center" style="height: 25px;" > <h2 id="härtemittel"  style="color: white;"   ></h2></div>
-                              <div class="col-6 col-lg-1 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
-                      
-                                  <div class="col-12 col-lg-2 text-center"> <button type="button" class="btn btn-secondary " id="button" style="margin-top: 50px;">Berechnen</button></div>
-                                </div>
+                            </div>
+                                
+                        </div>
 
                                 <div class="row m-0">
                                   <div class="col-0 col-sm-12 " style="height: 5vh;"> </div>
                                   </div >
                       </div>
-            <div class=" col-1 col-lg-1 "></div>
+                      <div class=" col-1 col-lg-1 "></div>
        
        
 
-<div class="col-12 abstand" ></div>
-
-<div class=" col-lg-1 "></div>
+                      <div class="col-12 abstand" ></div>
+                      
+                      <div class=" col-lg-1 "></div>
+                        
+                         
  <!-------------------------ausgabe------------------------------>   
- <div class=" col-12 col-lg-10 ränder " style="color: white;">
-                
-  <div class="row bg-dark">
+ <div class=" col-12 col-lg-12 col-xl-10 mittig " style="color: white; ">
+              
+    <div class="row bg-dark m-0 mittig  " style="font-weight: 700;">
 
-    <div class="col-6 col-lg-3 ränder " >
-      <div class="eHöhe">Ergebnis:</div>
-      <div  id="warnung" class="warnhinweis"></div>
-      </div>
-
-    <div class="col-6 col-lg-3 ränder " >
-    <div class="eHöhe">Anzahl <br>Reihen:</div>
-      <div id="anzahlReihen" class="ausgabe " ></div>
-    </div>
+      <div class="col-12  text-center " >
+        <div class="eHöhe "><h1>Berechnungen:</h1></div>
+        <div  id="warnung" class="warnhinweis"></div>
+          <div></div>
+        </div>
   
-
-      <div class="col-6 col-lg-3 ränder" id="verschwinde3">
-    <div class="eHöhe"> Abstand<br> Reihen:</div>
-      <div id="abstandReihen" class="ausgabe"></div>
-    </div>
-
-      <div class="col-6 col-lg-3 ränder">
-    <div class="eHöhe">Abstand<br>Rand:</div>
-      <div id="abstand1" class="ausgabe"></div>
-    </div>
-
-      <div class="col-6 col-lg-3 ränder">
-    <div class="eHöhe">Mindestdicke <br>der Probe:</div>
-      <div id="mindestdicke" class="ausgabe"></div>
-    </div>
-
-      <div class="col-6 col-lg-3 ränder">
-      <div class="eHöhe" id="abstand5">Diagonale<br>Grenzhärte</div>
-        <div id="eindruckdiagonale" class="ausgabe"></div>
+      <div class="col-6 col-lg-2  " style=" height: 190px; margin-left: auto; 
+      margin-right: auto; ">
+        <div  style="background-image: url('card.png');" class="card col-8 karte  ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Anzahl <br>Reihen:</div>
+        <div id="anzahlReihen" class="ausgabe starttextDrehen" ></div>
       </div>
-      
+      </div>
+
+      <div class="col-6 col-lg-2  " style=" height: 190px; margin-left: auto; 
+      margin-right: auto; " id="verschwinde3">
+        <div  style="background-image: url('card.png');" class="card col-8 karte  ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Abstand<br> Reihen:</div>
+        <div id="abstandReihen" class="ausgabe starttextDrehen" ></div>
+      </div>
+      </div>
+
+      <div class="col-6 col-lg-2  " style=" height: 190px; margin-left: auto; 
+      margin-right: auto; ">
+        <div  style="background-image: url('card.png');" class="card col-8 karte  ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Abstand<br>Rand:</div>
+        <div id="abstand1" class="ausgabe starttextDrehen" ></div>
+      </div>
+      </div>
+
+      <div class="col-6 col-lg-2  " style=" height: 190px; margin-left: auto; 
+      margin-right: auto; ">
+        <div  style="background-image: url('card.png');" class="card col-8 karte  ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Mindestdicke <br>der Probe:</div>
+        <div id="mindestdicke" class="ausgabe starttextDrehen" ></div>
+      </div>
+      </div>
+
+      <div class="col-6 col-lg-2  " style=" height: 190px; margin-left: auto; 
+      margin-right: auto; ">
+        <div  style="background-image: url('card.png');" class="card col-8 karte  ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Diagonale<br>Grenzhärte</div>
+        <div id="eindruckdiagonale" class="ausgabe starttextDrehen" ></div>
+      </div>
+      </div>
+
+  
      
     </div>
 
 </div>
-</div>
+
 <!----------------------------------ausgabe    ende---------------------------------------> 
 
 <div class="col-0 col-lg-1"></div>
