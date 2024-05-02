@@ -74,12 +74,51 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 
         });
       });
-
-
+function mittelw(){
+      eingabe = [];
+      zahl1 = document.getElementById("eingabe_1").value;
+      zahl2 = document.getElementById("eingabe_2").value;
+      zahl3 = document.getElementById("eingabe_3").value;
+      zahl4 = document.getElementById("eingabe_4").value;
+      zahl5 = document.getElementById("eingabe_5").value;
+ 
+      if (zahl1>0){
+    eingabe.push( parseInt(zahl1));
+ }
+ if (zahl2>0){
+     eingabe.push( parseInt(zahl2));
+  }
+  if (zahl3>0){
+     eingabe.push( parseInt(zahl3));
+  }
+  if (zahl4>0){
+     eingabe.push( parseInt(zahl4));
+  }
+  if (zahl5>0){
+     eingabe.push( parseInt(zahl5));
+  }
+ 
+    function ArrayAvg(myArray){
+     
+         var i = 0, summ = 0, ArrayLen = myArray.length;
+         while (i < ArrayLen) {
+           summ = summ + myArray[i++];
+         }
+         a = summ / ArrayLen;
+         mittel = a.toFixed(1);
+       
+       $("#härtemittel").html(mittel);
+     }
+     ArrayAvg(eingabe);
+    }
 
 
     if (document.getElementById("start")) {
-     document.getElementById("start").addEventListener("click",test);
+     document.getElementById("start").addEventListener("click",() => {   
+        mittelw();
+        setTimeout(test(mittel), 500);
+
+    });
     }
    
 
@@ -88,42 +127,8 @@ $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 
 //Umwertung
 
-   function test() {
-    eingabe = [];
-     zahl1 = document.getElementById("eingabe_1").value;
-     zahl2 = document.getElementById("eingabe_2").value;
-     zahl3 = document.getElementById("eingabe_3").value;
-     zahl4 = document.getElementById("eingabe_4").value;
-     zahl5 = document.getElementById("eingabe_5").value;
-
-     if (zahl1>0){
-   eingabe.push( parseInt(zahl1));
-}
-if (zahl2>0){
-    eingabe.push( parseInt(zahl2));
- }
- if (zahl3>0){
-    eingabe.push( parseInt(zahl3));
- }
- if (zahl4>0){
-    eingabe.push( parseInt(zahl4));
- }
- if (zahl5>0){
-    eingabe.push( parseInt(zahl5));
- }
-
-   function ArrayAvg(myArray){
+   function test(mittelwert) {
     
-        var i = 0, summ = 0, ArrayLen = myArray.length;
-        while (i < ArrayLen) {
-          summ = summ + myArray[i++];
-        }
-        a = summ / ArrayLen;
-        mittelwert = a.toFixed(1);
-      
-      $("#härtemittel").html(mittelwert);
-    }
-    ArrayAvg(eingabe)
 
     if (verfahren===0){
         alert('Wählen die ein Verfahren aus.')
@@ -1255,3 +1260,4 @@ function remove(){
         $('.ausgabeKarte').removeClass('drehen');
      }
 }
+
