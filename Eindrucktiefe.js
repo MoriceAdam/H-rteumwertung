@@ -222,7 +222,7 @@ $(document).ready(function(){
         $("#abstand5").html("Durchmesser");
     });
     $("#auswahlHRH").click(function(){
-        verfahren = 49;
+        verfahren = 40;
        $("#aktuellesVerfahren").html(" HRH");
         $("#abstand5").html("Durchmesser");
     });
@@ -242,7 +242,7 @@ $(document).ready(function(){
         $("#abstand5").html("Durchmesser");
     });
     $("#auswahl45T").click(function(){
-        verfahren = 43;
+        verfahren = 44;
        $("#aktuellesVerfahren").html(" HR45T");
         $("#abstand5").html("Durchmesser");
     });
@@ -349,6 +349,7 @@ x =Math.PI;
       eingabe.push( parseInt(zahl5));
    }
   
+
      function ArrayAvg(myArray){
       
           var i = 0, summ = 0, ArrayLen = myArray.length;
@@ -451,8 +452,8 @@ vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))))
 ha(2.5);
 }
 if(verfahren===19){
-  let dm=Math.sqrt((2.5**2)-(2.5-(2*1839*0.102)/(2.5*x*mittelwert))**2);
-  let h=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))));
+   dm=Math.sqrt((2.5**2)-(2.5-(2*1839*0.102)/(2.5*x*mittelwert))**2);
+  vickersTiefe=0.5*(2.5-Math.sqrt(((2.5**2)-(dm**2))));
   ha(2.5);
 }
 //5

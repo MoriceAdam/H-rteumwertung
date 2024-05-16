@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
     $("#auswahlHV05").click(function(){
         verfahren = 4;
-       $("#aktuellesVerfahren").html(" HV5");
+       $("#aktuellesVerfahren").html(" HV0,5");
        
     });
     $("#auswahlHV0015").click(function(){
