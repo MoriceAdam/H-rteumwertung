@@ -174,7 +174,7 @@ $(document).ready(function(){
     $("#auswahlHRA").click(function(){
         verfahren = 30;
        $("#aktuellesVerfahren").html(" HRA");
-        $("#abstand5").html("Diagonale");
+      
     });
     $("#auswahlHRC").click(function(){
         verfahren = 31;
@@ -251,8 +251,9 @@ $(document).ready(function(){
   if (document.getElementById("start")) {
         
    document.getElementById("start").addEventListener("click",() => {
-
-      $(".zugkarte").css('background-image', 'url(' + 'card.png' + ')');
+    $(".iO2karte").css('background-image', 'url(' + 'card.png' + ')');
+    $(".iO2karte").css('background-image', 'url(' + 'card.png' + ')');
+    
       document.getElementById("rd").innerHTML = ("");
       document.getElementById("rREL").innerHTML = ("");
       document.getElementById("dmmittel").innerHTML = ("");
@@ -269,9 +270,9 @@ $(document).ready(function(){
       zahl4 = document.getElementById("eingabe_4").value;
       zahl5 = document.getElementById("eingabe_5").value;
       Hc = document.getElementById("Härteplatte").value;
+
       mittelw(zahl1,zahl2,zahl3,zahl4,zahl5);
       H=mittel;
-     
       $("#härtemittel").html(mittel);
       
       setTimeout(test(zahl1), 500);
@@ -288,21 +289,24 @@ $(document).ready(function(){
       
       setTimeout(test(zahl5), 500);
       dm5=dm;
-     
+    
+      
 
       mittelw(dm1,dm2,dm3,dm4,dm5);  
     dmMittel = mittel;
-    alert(dmMittel);
+  
+    
    
     
     
-    rb(dm1,dm2,dm3,dm4,dm5);
+   
+    
+
+    if(verfahren>9&&verfahren<30){
+        rb(dm1,dm2,dm3,dm4,dm5);
     r=differenz
     rREL = 100*(r/dmMittel);
     rREL=rREL.toFixed(2);
-  
-
-    if(verfahren>9&&verfahren<30){
     rb(zahl1,zahl2,zahl3,zahl4,zahl5);
     r=r.toFixed(2);
     Erel = 100*((H-Hc)/Hc);
@@ -356,7 +360,7 @@ $(document).ready(function(){
                 document.getElementById("iO2").innerHTML = ("i.O");
                 $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
             }
-            else{
+            if((rREL>2.5) || (rREL<-2.5)){
                 document.getElementById("iO2").innerHTML = ("n.i.O");  
                 $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');
             }
@@ -368,7 +372,7 @@ $(document).ready(function(){
             document.getElementById("iO1").innerHTML = ("i.O");
             $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
         }
-        else{
+        if((rREL>2.0) || (rREL<-2.0)){
             document.getElementById("iO1").innerHTML = ("n.i.O");
             $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');  
         }
@@ -376,7 +380,7 @@ $(document).ready(function(){
             document.getElementById("iO2").innerHTML = ("i.O");
             $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
         }
-        else{
+        if((rREL>2.0) || (rREL<-2.0)){
             document.getElementById("iO2").innerHTML = ("n.i.O");
             $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
         }
@@ -384,27 +388,99 @@ $(document).ready(function(){
 
     }
 
-if(verfahren===13 || verfahren===12 || verfahren===11 || verfahren===18 ||verfahren===17 || verfahren===16 || verfahren===23 || verfahren===22 || verfahren===21 || verfahren===28 || verfahren===27 || verfahren===26 ) {
-            if((rREL<3.0 && rREL>=0) || (rREL>-3.0 && rRel<=0)){
+if(verfahren<=13 && verfahren>=10 ) {
+    if(rREL<3.0 && rREL>-3.0){
                 document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
             }
-            else{
-                document.getElementById("iO1").innerHTML = ("n.i.O");  
+            if((rREL>3.0) || (rREL<-3.0)){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
             }
-            if((Erel<3.0 && Erel>=0) || (Erel>-3.0 && Erel<=0)){
+            if(Erel<3.0 && Erel>-3.0){
                 
                 document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
             }
-            else{
-                document.getElementById("iO2").innerHTML = ("n.i.O");  
+            if((rREL>3.0) || (rREL<-3.0)){
+                document.getElementById("iO2").innerHTML = ("n.i.O"); 
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');   
             }
         }
+
+        if(verfahren<=18 && verfahren>=15 ) {
+            if(rREL<3.0 && rREL>-3.0){
+                        document.getElementById("iO1").innerHTML = ("i.O");
+                        $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                    }
+                    if((rREL>3.0) || (rREL<-3.0)){
+                        document.getElementById("iO1").innerHTML = ("n.i.O");
+                        $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+                    }
+                    if(Erel<3.0 && Erel>-3.0){
+                        
+                        document.getElementById("iO2").innerHTML = ("i.O");
+                        $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                    }
+                    if((rREL>3.0) || (rREL<-3.0)){
+                        document.getElementById("iO2").innerHTML = ("n.i.O"); 
+                        $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');   
+                    }
+                }
+                if(verfahren<=23 && verfahren>=20 ) {
+                    if(rREL<3.0 && rREL>-3.0){
+                                document.getElementById("iO1").innerHTML = ("i.O");
+                                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                            }
+                            if((rREL>3.0) || (rREL<-3.0)){
+                                document.getElementById("iO1").innerHTML = ("n.i.O");
+                                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+                            }
+                            if(Erel<3.0 && Erel>-3.0){
+                                
+                                document.getElementById("iO2").innerHTML = ("i.O");
+                                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                            }
+                            if((rREL>3.0) || (rREL<-3.0)){
+                                document.getElementById("iO2").innerHTML = ("n.i.O"); 
+                                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');   
+                            }
+                        }
+                        if(verfahren<=29 && verfahren>=20) {
+                            if(rREL<3.0 && rREL>-3.0){
+                                        document.getElementById("iO1").innerHTML = ("i.O");
+                                        $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                                    }
+                                    if((rREL>3.0) || (rREL<-3.0)){
+                                        document.getElementById("iO1").innerHTML = ("n.i.O");
+                                        $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+                                    }
+                                    if(Erel<3.0 && Erel>-3.0){
+                                        
+                                        document.getElementById("iO2").innerHTML = ("i.O");
+                                        $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                                    }
+                                    if((rREL>3.0) || (rREL<-3.0)){
+                                        document.getElementById("iO2").innerHTML = ("n.i.O"); 
+                                        $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');   
+                                    }
+                                }
+
     }
-   
+ 
+    
+
 if (verfahren<10){
+    rb(zahl5,zahl4,zahl3,zahl2,zahl1);
+    r=differenz
+    rREL = 100*(r/H);
+    rREL=rREL.toFixed(2);
+    
     E=H-Hc;
     Erel = 100*((H-Hc)/Hc);
-    rkurz=r.toFixed(4);
+    rb(dm1,dm2,dm3,dm4,dm5);
+    rt=differenz 
+    rkurz=rt.toFixed(4);
     document.getElementById("dmmittel").innerHTML = (dmMittel+"mm");
     document.getElementById("rd").innerHTML = (rkurz);
     document.getElementById("rREL").innerHTML = (rREL);
@@ -413,10 +489,11 @@ if (verfahren<10){
     document.getElementById("H").innerHTML = (H);
     document.getElementById("EB").innerHTML = ("Abweichung<Br> Prüfmaschine<Br>b");
     document.getElementById("ErelBrel").innerHTML = ("Relative Abweichung <Br>Prüfmaschine<Br> b<sub>rel</sub>");
-    if (r<0.001){
+    if (rt<0.001){
     document.getElementById("iO1").innerHTML = ("i.O");
+    $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
     }
-    if (r>0.001){
+    if (rt>0.001){
         if (verfahren===1 || verfahren===4 || verfahren===7 ){
             if (Hc<=250){ 
                 if((rREL>6.0 ) || (rREL<-6.0)){
@@ -457,7 +534,7 @@ if (verfahren<10){
                 }
                 if(rREL<8.0 && rREL>-8.0 ){
                     document.getElementById("iO1").innerHTML = ("i.O");
-                    $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');
+                    $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
                 }
             }
         }
@@ -465,31 +542,33 @@ if (verfahren<10){
 
         if (verfahren===2 || verfahren===3 || verfahren===9 ){
             if (Hc<=250){ 
-                if((rREL>18.0 ) || (rREL<-18.0)){
-                    document.getElementById("iO1").innerHTML = ("n.i.O"); 
-                    $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')'); 
-                }
                 if(rREL<18.0 && rREL>-18.0){
                     document.getElementById("iO1").innerHTML = ("i.O");
                     $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
                 }
+                else{
+                    document.getElementById("iO1").innerHTML = ("n.i.O"); 
+                    $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')'); 
+                }
+             
             }
             if(Hc>250){
-                if((rREL>12.0 ) || (rREL<-12.0)){
+                if(rREL<12.0 && rREL>-12.0 ){
+                    document.getElementById("iO1").innerHTML = ("i.O");
+                    $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+                }
+                else{
                     document.getElementById("iO1").innerHTML = ("n.i.O");
                     $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');  
                 }
-                if(rREL<12.0 && rREL>-12.0 ){
-                    document.getElementById("iO1").innerHTML = ("i.O");
-                    $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');
-                }
+              
             }
         }
     }
        // 0,21/ 𝑑̅+ 1,5
        
        zwichen = (0.21/dm) +1.5;
-        if (dm>=0.02 &&  dm<0,14 ){ 
+        if (dmMittel>=0.02 &&  dmMittel<0,14 ){ 
             
                 if(Erel>zwichen  || Erel<(-zwichen)){
                     document.getElementById("iO2").innerHTML = ("n.i.O"); 
@@ -500,26 +579,29 @@ if (verfahren<10){
                     $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
                 }
             }
-        if (dm>=0.14 &&  dm<1,4 ){
+        if (dmMittel>=0.14 &&  dmMittel1,4 ){
                 if((Erel>3 ) || (Erel<-3)){
                     document.getElementById("iO2").innerHTML = ("n.i.O");
                     $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
                 }
                 if(Erel<3 && Erel>-3 ){
-                    alert("hallo");
                     document.getElementById("iO2").innerHTML = ("i.O");
                     $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
                 }
         }   
-
 }
 
-if(verfahren>29 && verfahren<44){
+if(verfahren>=30 && verfahren<44){
+    rb(zahl5,zahl4,zahl3,zahl2,zahl1);
+    r=differenz.toFixed(4);
+    rREL = 100*(r/H);
+    rREL=rREL.toFixed(2);
     E=H-Hc;
     Erel = 100*((H-Hc)/Hc);
-    rkurz=r.toFixed(4);
+   
+
     document.getElementById("dmmittel").innerHTML = (dmMittel+"mm");
-    document.getElementById("rd").innerHTML = (rkurz);
+    document.getElementById("rd").innerHTML = (r);
     document.getElementById("rREL").innerHTML = (rREL);
     document.getElementById("E").innerHTML = (E.toFixed(2));
     document.getElementById("Erel").innerHTML = (Erel.toFixed(3));
@@ -528,38 +610,459 @@ if(verfahren>29 && verfahren<44){
     document.getElementById("ErelBrel").innerHTML = ("Relative Abweichung <Br>Prüfmaschine<Br> b<sub>rel</sub>");
     
     if(verfahren===30){
+       
+        zw1= 0.02*(100-dmMittel);
+        if(Hc>=20 && Hc<=75){
+            if(r<=zw1 || r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw1) || (r<-(zw1))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if(r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+
+
+        }
+        if(Hc>75 && Hc<=95){
+            if(r<=zw1 || r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw1) || (r<-(zw1))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if(r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+
+            if((E>1.5 ) || (E<-1.5)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<1.5 && E>-1.5 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        } 
 
     }
     if(verfahren===31){
-        
+        zw1= 0.02*(100-dmMittel);
+        if(Hc>=10 && Hc<=70){
+            if(r<=zw1 || r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if(r>=zw1 && r>=0.8){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if(r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((E>1.5 ) || (E<-1.5)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<1.5 && E>-1.5 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+
+
+        }
+    
     }
     if(verfahren===32){
+        zw1= 0.02*(100-dmMittel);
+        if(Hc>=40 && Hc<=70){
+            if(r<=zw1 || r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if(r>=zw1 && r>=0.8){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+
+
+        }
+        if(Hc>70 && Hc<=77){
+            if(r<=zw1 || r<=0.8){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if(r>=zw1 && r>=0.8){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>1.5 ) || (E<-1.5)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<1.5 && E>-1.5 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        } 
         
     }
     if(verfahren>=33 && verfahren<=35){
-        
+        zw3= 0.04*(100-dmMittel);
+        if(r<=zw3){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if(r<=zw3){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+           if (r<=1,2){
+            document.getElementById("iO1").innerHTML = ("i.O");
+            $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+        }
+
+
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+        }      
     }
     if(verfahren===36){
+               
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=10 && Hc<=45){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>4 ) || (E<-4)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<4 && E>-4 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
+        if(Hc>45 && Hc<=80){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>3 ) || (E<-3)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<3 && E>-3 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
+        if(Hc>80 && Hc<=100){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
         
     }
     if(verfahren===37){
-        
+        alert(r);
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=70 && Hc<=90){
+            if(r<=zw2){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if(r>zw2){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2.5 ) || (E<-2.5)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2.5 && E>-2.5 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            
+        }
+        if(Hc>90 && Hc<=100){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
     }
     if(verfahren===38){
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=60 && Hc<=90){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>3 ) || (E<-3)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<3 && E>-3 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            
+        }
+        if(Hc>90 && Hc<=100){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
         
     }
     if(verfahren===39){
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=30  && Hc<=50){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>6 ) || (E<-6)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<6 && E>-6 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            
+        }
+        if(Hc>50 && Hc<=75){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>4.5 ) || (E<-4.5)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<4.5 && E>-4.5 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
+        if(Hc>75 && Hc<=94){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>3 ) || (E<-3)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<3 && E>-3 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
         
     }
     if(verfahren===40){
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=80  && Hc<=100){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            
+        }
         
     }
     if(verfahren===41){
+        zw2= 0.04*(130-dmMittel);
+        if(Hc>=40  && Hc<=60){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>4 ) || (E<-4)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<4 && E>-4 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            
+        }
+        if(Hc>60 && Hc<=80){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>3 ) || (E<-3)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<3 && E>-3 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
+        if(Hc>80 && Hc<=100){
+            if(r<=zw2 && r>=-(zw2)){
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            if((r>zw2) || (r<-(zw2))){
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>2 ) || (E<-2)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<2 && E>-2 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+        }
         
     }
     if(verfahren>=42 && verfahren<= 44){
+
+        zw4= 0.06*(100-dmMittel);
+        if(r<=zw4 || r<=2,4){
+            
+                document.getElementById("iO1").innerHTML = ("i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardgreen.png' + ')');
+            }
+            else{
+               
+                document.getElementById("iO1").innerHTML = ("n.i.O");
+                $(".iO1karte").css('background-image', 'url(' + 'cardred.png' + ')');    
+            }
+            if((E>3 ) || (E<-3)){
+                document.getElementById("iO2").innerHTML = ("n.i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardred.png' + ')');  
+            }
+            if(E<3 && E>-3 ){
+                document.getElementById("iO2").innerHTML = ("i.O");
+                $(".iO2karte").css('background-image', 'url(' + 'cardgreen.png' + ')');            
+        }
+
         
     }
+
 }
 });
 }
@@ -590,7 +1093,6 @@ function hu(k,s,d){
 function rb(dm11,dm12,dm13,dm14,dm15){
    dmeingabe = [];
    if (dm11>0){
-     
     dmeingabe.push( parseFloat(dm11));
    }
    if (dm12>0){
@@ -642,8 +1144,8 @@ function mittelw(zahl11,zahl12, zahl13, zahl14, zahl15){
            
       }   
       a = summ / ArrayLen; 
-      mittel = a.toFixed(1);
-      alert(mittel);
+      mittel = a.toFixed(2);
+      
      }
      ArrayAvg(eingabe);
 }
@@ -658,13 +1160,6 @@ function fehler1(){
         alert('Nicht im Messbereich')
 }
 
-function hi(s,k){
-        vickersTiefe=(k-mittelwert)*s;
-        dm=(vickersTiefe*0.5)*2;
-        dMin=10*vickersTiefe;
-        absRS=2.5*dm;
-        absES=3*dm;
-}
 
 
 
@@ -778,109 +1273,74 @@ dm=Math.sqrt((10**2)-(10-(2*29420*0.102)/(10*x*mittelwert))**2)
 
 
 if (verfahren===30){
-    if(mittelwert>=20&&mittelwert<=95){
-    hi(0.002,100);}
-else{
-    fehler1()
-}
-}
-if (verfahren===31){
-    if(mittelwert>=20&&mittelwert<=70){
-    hi(0.002,100);}
-    else{
-        fehler1()
+    vickersTiefe=(100-mittelwert)*0.002;
+    dm = (vickersTiefe*0.5)*2;
     }
+
+
+if (verfahren===31){
+    
+    vickersTiefe=(100-mittelwert)*0.002;
+    dm=(vickersTiefe*0.5)*2;
 }
 if (verfahren===32){
-    if(mittelwert>=40&&mittelwert<=77){
-    hi(0.002,100);}
-    else{
-        fehler1()
-    }
+        vickersTiefe=(100-mittelwert)*0.002;
+        dm=(vickersTiefe*0.5)*2;
+ 
 }
 if (verfahren===33){
-    if(mittelwert>=70&&mittelwert<=94){
-    hi(0.001,100);}
-    else{
-        fehler1()
-    }
+    vickersTiefe=(100-mittelwert)*0.001;
+    dm=(vickersTiefe*0.5)*2;
+
 }
 if (verfahren===34){
-    if(mittelwert>=42&&mittelwert<=86){
-    hi(0.001,100);}
-    else{
-        fehler1()
-    }
+    vickersTiefe=(100-mittelwert)*0.001;
+    dm=(vickersTiefe*0.5)*2;
 }
 if (verfahren===35){
-    if(mittelwert>=20&&mittelwert<=77){
-    hi(0.001,100);}
-    else{
-        fehler1()
-    }
+    vickersTiefe=(100-mittelwert)*0.001;
+    dm =(vickersTiefe*0.5)*2;
 }
+
+
+function hu(k,s,d){
+    vickersTiefe=(k-mittelwert)*s;
+    dm = Math.sqrt(d**2-(d-(2*vickersTiefe)**2));
+    }  
+
+
+
 if (verfahren===36){
-    if(mittelwert>=10&&mittelwert<=100){
-    hu(130, 0.002, 1.5875);}
-    else{
-        fehler1()
-    }
+    hu(130, 0.002, 1.5875);
 }
 if (verfahren===37){
-    if(mittelwert>=70&&mittelwert<=100){
-    hu(130, 0.002, 3.175);}
-    else{
-        fehler1()
-    }
+  
+    hu(130, 0.002, 3.175);
 }
 if (verfahren===38){
-    if(mittelwert>=60&&mittelwert<=100){
-    hu(130, 0.002, 1.5875);}
-    else{
-        fehler1()
-    }
+
+    hu(130, 0.002, 1.5875);
 }
 if (verfahren===39){
-    if(mittelwert>=30&&mittelwert<=94){
-    hu(130, 0.002, 1.5875);}
-    else{
-        fehler1()
-    }
+    hu(130, 0.002, 1.5875);  
 }
 if (verfahren===40){
-    if(mittelwert>=80&&mittelwert<=100){
-    hu(130, 0.002, 3.175);}
-    else{
-        fehler1()
-    }
+    hu(130, 0.002, 3.175);
 }
 if (verfahren===41){
-    if(mittelwert>=40&&mittelwert<=100){
-    hu(130, 0.002, 3.175);}
-    else{
-        fehler1()
-    }
+    hu(130, 0.002, 3.175); 
 }
 if (verfahren===42){
-    if(mittelwert>=67&&mittelwert<=93){
-    hu(100, 0.001, 1.5875);}
-    else{
-        fehler1()
-    }
+    hu(100, 0.001, 1.5875);
+
 }
 if (verfahren===43){
-    if(mittelwert>=29&&mittelwert<=82){
-    hu(100, 0.001, 1.5875);}
-    else{
-        fehler1()
-    }
+    hu(100, 0.001, 1.5875);
+ 
 }
 if (verfahren===44){
-    if(mittelwert>=1&&mittelwert<=72){
-    hu(100, 0.001, 1.5875);}
-    else{
-        fehler1()
-    }
+    hu(100, 0.001, 1.5875);
+
 }
 
 
