@@ -317,9 +317,11 @@
                               <div class="col-6 col-lg-6 text-center" style="height: 25px;"> <h2 id="aktuellesVerfahren" style="color: white;"  ></h2> </div>
                               </div>
                             </div>
-                            <div class="col-6 col-lg-2 text-white text-center" >Härteplatte: 
-                            <div class="col-12 col-lg-6 mittig">
-                                <input type="number" id="Härteplatte" class="col-10 text-center" style="margin-top: 10px; width: 80px; margin-bottom: 20px;">
+                            <div class="col-6 col-lg-3 text-white text-center" >Plattenhärte: 
+                            <div class="col-12 col-lg-9 mittig">
+                                <input type="number" id="Härteplatte" class="col-10 text-center" style="margin-top: 10px; width: 80px; margin-bottom: 20px;"><br>
+                                Plattennummer:<br>
+                                <input type="number" id="härteplattenNummer" class="col-10 text-center" style="margin-top: 10px; width: 80px; margin-bottom: 20px;">
                               </div> 
                             </div>
   
@@ -350,11 +352,15 @@
         <div class="eHöhe "><h1>Ergebnisse:</h1></div>
           <div></div>
         </div>
-  
-      <div class="col-6 col-lg-3  " style=" height: 190px; margin-left: auto; 
+       
+        <div>Datum, Uhrzeit: <div id="datum" class=" col-6 text-white"></div></div> 
+        <div>Härteplattennummer:<div id="nummerx" class=" col-6 text-white"></div></div> 
+      </div>
+        <div class="row bg-dark m-0 mittig  " style="font-weight: 700;;">
+      <div class="col-6 col-lg-3   " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-9 text-white karte zugkarte ausgabeKarte border border-light  startdrehen">
-      <div class="eHöhe angabe starttextDrehen" >Mittlerer<Br>Eindruckdurchmesser<Br>d</div>
+        <div  style="background-image: url('card.png'); height: 10rem;" class="card col-12 col-lg-8  text-white karte zugkarte ausgabeKarte border border-light  startdrehen">
+      <div class="eHöhe angabe starttextDrehen" >Mittlerer<Br>Eindruck-<br>durchmesser<Br>d</div>
         <div id="dmmittel" class="ausgabe starttextDrehen" ></div>
       </div>
       </div>
@@ -362,15 +368,15 @@
   
         <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
         margin-right: auto; ">
-          <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white hvkarte karte ausgabeKarte border border-white startdrehen" >
-      <div class="eHöhe angabe starttextDrehen">Wiederholpräzision <br>r</div>
+          <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-12 col-lg-8 text-white hvkarte karte ausgabeKarte border border-white startdrehen" >
+      <div class="eHöhe angabe starttextDrehen">Wiederhol-<br>präzision <br>r</div>
         <div id="rd" class="ausgabe starttextDrehen"> </div>
       </div>
       </div>
   
         <div class="col-6 col-lg-3" style=" height: 190px; margin-left: auto; 
         margin-right: auto; ">
-          <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white karte hbkarte ausgabeKarte border border-white startdrehen"  >
+          <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-12 col-lg-8 text-white karte hbkarte ausgabeKarte border border-white startdrehen"  >
       <div class="eHöhe angabe starttextDrehen">Wiederholpräzision<Br>r<sub>rel</sub></div>
         <div id="rREL" class="ausgabe starttextDrehen"></div>
       </div>
@@ -379,7 +385,7 @@
   
     <div class="col-6 col-lg-3" style=" height: 190px; margin-left: auto; 
     margin-right: auto; ">
-      <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white karte iO1karte ausgabeKarte border border-white startdrehen"  >
+      <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-12 col-lg-8 text-white karte iO1karte ausgabeKarte border border-white startdrehen"  >
   <div class="eHöhe angabe starttextDrehen">Bewertung<Br>Wiederholpräzision</div>
     <div id="iO1" class="ausgabe starttextDrehen"></div>
   </div>
@@ -392,7 +398,7 @@
   
         <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
         margin-right: auto; ">
-          <div style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-9 text-white hrckarte karte ausgabeKarte ausgabeKarte border border-white startdrehen"  >
+          <div style="background-image: url('card.png'); height: 10rem;" class="card col-12 col-lg-8 text-white hrckarte karte ausgabeKarte ausgabeKarte border border-white startdrehen"  >
       <div  class="eHöhe angabe starttextDrehen" id="test">Mittelwert<Br>Härte</div>
         <div id="H" class="ausgabe starttextDrehen"></div>
       </div>
@@ -400,7 +406,7 @@
   
         <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
         margin-right: auto; ">
-          <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white karte hrfkarte ausgabeKarte border border-white startdrehen" >
+          <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-17 col-lg-8 text-white karte hrfkarte ausgabeKarte border border-white startdrehen" >
       <div class="eHöhe angabe starttextDrehen" id="EB">Abweichung<Br> Prüfmaschine<Br>E</div>
         <div id="E" class="ausgabe starttextDrehen"></div>
       </div>
@@ -408,7 +414,7 @@
   
         <div class="col-6 col-lg-3 " style=" height: 190px ; margin-left: auto; 
         margin-right: auto; ">
-          <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white hrckarte karte ausgabeKarte border border-white startdrehen" >
+          <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-12 col-lg-8 text-white hrckarte karte ausgabeKarte border border-white startdrehen" >
       <div class="eHöhe angabe starttextDrehen" id="ErelBrel">Relative Abweichung <Br>Prüfmaschine<Br> E<sub>rel</sub></div>
         <div id="Erel" class="ausgabe starttextDrehen"></div>
       </div>
@@ -416,7 +422,7 @@
   
       <div class="col-6 col-lg-3" style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-9 text-white karte iO2karte ausgabeKarte border border-white startdrehen"  >
+        <div  style="background-image: url('card.png'); height: 10rem;"  class="card col-12 col-lg-8 text-white karte iO2karte ausgabeKarte border border-white startdrehen"  >
     <div class="eHöhe angabe starttextDrehen">Bewertung<Br>Abweichung</div>
       <div id="iO2" class="ausgabe starttextDrehen"></div>
     </div>

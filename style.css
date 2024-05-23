@@ -98,16 +98,16 @@ background-color: #661010;
 
 @keyframes Drehen {
     0% {
-        height: 0px;
+        height: 0rem;
         opacity:0;
       }
    
       80% {
-        height: 160px;}
+        height: 10rem;}
     
 
         100% {
-            height: 160px;
+            height: 10rem;
   
       }
     }
@@ -152,16 +152,16 @@ background-color: #661010;
 
 @keyframes startdrehen {
     0% {
-      height: 0px;
+      height: 0rem;
       opacity:0;
     }
       60%{
           opacity:1;  
       }
     80% {
-      height: 160px;}
+      height: 10rem;}
       100% {
-          height: 160px;
+          height: 10rem;
           
     }
   }
