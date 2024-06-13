@@ -254,6 +254,8 @@ $(document).ready(function(){
     $(".iO2karte").css('background-image', 'url(' + 'card.png' + ')');
     $(".iO2karte").css('background-image', 'url(' + 'card.png' + ')');
     
+    document.getElementById("nummerx").innerHTML = ("");
+    document.getElementById("datum").innerHTML = ("");
       document.getElementById("rd").innerHTML = ("");
       document.getElementById("rREL").innerHTML = ("");
       document.getElementById("dmmittel").innerHTML = ("");
@@ -262,7 +264,10 @@ $(document).ready(function(){
       document.getElementById("Erel").innerHTML = ("");
       document.getElementById("iO1").innerHTML = ("");
       document.getElementById("iO2").innerHTML = ("");
-
+      heute = new Date().toLocaleString();; 
+      document.getElementById("datum").innerHTML = (heute);
+      nummerx =   zahl1 = document.getElementById("härteplattenNummer").value;
+      document.getElementById("nummerx").innerHTML = (nummerx);
 
       zahl1 = document.getElementById("eingabe_1").value;
       zahl2 = document.getElementById("eingabe_2").value;
@@ -270,6 +275,8 @@ $(document).ready(function(){
       zahl4 = document.getElementById("eingabe_4").value;
       zahl5 = document.getElementById("eingabe_5").value;
       Hc = document.getElementById("Härteplatte").value;
+
+      
 
       mittelw(zahl1,zahl2,zahl3,zahl4,zahl5);
       H=mittel;
@@ -816,7 +823,7 @@ if(verfahren>=30 && verfahren<44){
         
     }
     if(verfahren===37){
-        alert(r);
+        
         zw2= 0.04*(130-dmMittel);
         if(Hc>=70 && Hc<=90){
             if(r<=zw2){

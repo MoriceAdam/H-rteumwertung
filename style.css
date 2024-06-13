@@ -60,7 +60,9 @@ border-width: 5px;}
     left:-10rem; 
     margin-top:-6px;
 }
-
+.dropdown-item:hover{
+  text-decoration: underline;
+} 
 
 .dropdown-menu > li > a:hover:after {
     text-decoration: underline;

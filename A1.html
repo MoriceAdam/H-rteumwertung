@@ -122,17 +122,17 @@
                             <button class="btn btn btn-dark dropdown-toggle  mittig" type="button" data-bs-toggle="dropdown" >Verfahren
                             <span class="caret"></span></button>
                             <ul class="dropdown-menu bg-secondary text-center text-white shadow-lg p-10 mb-5">
-                            <li id="auswahlrm" >Rm</li>
-                            <li id="auswahlHV" >HV10</li>
-                            <li id="auswahlhb" >HB</li>
-                            <li id="auswahlhrb" >HRB</li>
-                            <li id="auswahlhrf" >HRF</li>
-                            <li id="auswahlhrc" >HRC</li>
-                            <li id="auswahlhra" >HRA</li>
-                            <li id="auswahlhrd" >HRD</li>
-                            <li id="auswahlhr15">HR15N</li>
-                            <li id="auswahlhr30">HR30N</li>
-                            <li id="auswahlhr45">HR45N</li>
+                            <li id="auswahlrm" class="dropdown-item text-white bg-secondary">Rm</li>
+                            <li id="auswahlHV" class="dropdown-item text-white bg-secondary">HV10</li>
+                            <li id="auswahlhb" class="dropdown-item text-white bg-secondary">HB</li>
+                            <li id="auswahlhrb" class="dropdown-item text-white bg-secondary">HRB</li>
+                            <li id="auswahlhrf" class="dropdown-item text-white bg-secondary">HRF</li>
+                            <li id="auswahlhrc" class="dropdown-item text-white bg-secondary">HRC</li>
+                            <li id="auswahlhra" class="dropdown-item text-white bg-secondary">HRA</li>
+                            <li id="auswahlhrd" class="dropdown-item text-white bg-secondary">HRD</li>
+                            <li id="auswahlhr15" class="dropdown-item text-white bg-secondary">HR15N</li>
+                            <li id="auswahlhr30" class="dropdown-item text-white bg-secondary">HR30N</li>
+                            <li id="auswahlhr45" class="dropdown-item text-white bg-secondary">HR45N</li>
                           </ul>
                         </div>
                         
@@ -189,10 +189,10 @@
       <div class="eHöhe "><h1>Umwertung des Mittelwertes:</h1></div>
         <div></div>
       </div>
-
+     <div>Datum<br><div class="datum text-white"></div></div>
     <div class="col-6 col-lg-3  " style=" height: 190px; margin-left: auto; 
     margin-right: auto; ">
-      <div  style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-8 text-white karte zugkarte ausgabeKarte border border-light  startdrehen">
+      <div  style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-7 text-white karte zugkarte ausgabeKarte border border-light  startdrehen">
     <div class="eHöhe angabe starttextDrehen" >Rm <Br> MPa <Br> [N/mm<sup>2</sup>]</div>
       <div id="zug" class="ausgabe starttextDrehen" ></div>
       <div id="zugS" class="ausgabe starttextDrehen" ></div>
@@ -202,7 +202,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white hvkarte karte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white hvkarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Vickers <Br>HV 10</div>
       <div id="vickers" class="ausgabe starttextDrehen"> </div>
       <div id="vickersS" class="ausgabe starttextDrehen"></div>
@@ -211,7 +211,7 @@
 
       <div class="col-6 col-lg-3" style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white karte hbkarte ausgabeKarte border border-white startdrehen"  >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white karte hbkarte ausgabeKarte border border-white startdrehen"  >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Brinell <Br>HB</div>
       <div id="brinell" class="ausgabe starttextDrehen"></div>
       <div id="brinellS" class="ausgabe starttextDrehen"></div>
@@ -221,7 +221,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-8 text-white hrbkarte karte ausgabeKarte ausgabeKarte border border-white startdrehen"  >
+        <div style="background-image: url('card.png'); height: 160px;" class="card col-12 col-lg-7 text-white hrbkarte karte ausgabeKarte ausgabeKarte border border-white startdrehen"  >
     <div  class="eHöhe angabe starttextDrehen" id="test">Härte <Br> Rockwell <Br>HRB</div>
       <div id="hrb" class="ausgabe starttextDrehen"></div>
       <div id="hrbS" class="ausgabe starttextDrehen"></div>
@@ -230,7 +230,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white karte hrfkarte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white karte hrfkarte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HRF</div>
       <div id="hrf" class="ausgabe starttextDrehen"></div>
       <div id="hrfS" class="ausgabe starttextDrehen"></div>
@@ -239,16 +239,16 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px ; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white hrckarte karte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white hrckarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HRC</div>
       <div id="hrc" class="ausgabe starttextDrehen"></div>
       <div id="hrcS" class="ausgabe starttextDrehen"></div>
     </div>
     </div>
 
-      <div class="col-6 col-lg-3  " style=" height: 190px; margin-left: auto; 
+      <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white karte hrakarte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white karte hrakarte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HRA</div>
       <div id="hra" class="ausgabe starttextDrehen"></div>
       <div id="hraS" class="ausgabe starttextDrehen"></div>
@@ -257,7 +257,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white hrdkarte karte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white hrdkarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HRD</div>
       <div id="hrd" class="ausgabe starttextDrehen"></div>
       <div id="hrdS" class="ausgabe starttextDrehen"></div>
@@ -266,7 +266,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white hr15nkarte karte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white hr15nkarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HR15N</div>
       <div id="hr15n" class="ausgabe starttextDrehen"></div>
       <div id="hr15nS" class="ausgabe starttextDrehen"></div>
@@ -275,7 +275,7 @@
 
       <div class=" col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-8 text-white hr30nkarte karte ausgabeKarte border border-white startdrehen" >
+        <div  style="background-image: url('card.png'); height: 160px;"  class="card col-12 col-lg-7 text-white hr30nkarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HR30N</div>
       <div id="hr30n" class="ausgabe starttextDrehen"></div>
       <div id="hr30nS" class="ausgabe starttextDrehen"></div>
@@ -284,7 +284,7 @@
 
       <div class="col-6 col-lg-3 " style=" height: 190px; margin-left: auto; 
       margin-right: auto; ">
-        <div style="background-image: url('card.png');height: 160px;"  class="card col-12 col-lg-8 text-white hr45nkarte karte ausgabeKarte border border-white startdrehen" >
+        <div style="background-image: url('card.png');height: 160px;"  class="card col-12 col-lg-7 text-white hr45nkarte karte ausgabeKarte border border-white startdrehen" >
     <div class="eHöhe angabe starttextDrehen">Härte <Br> Rockwell <Br>HR45N</div>
       <div id="hr45n" class="ausgabe starttextDrehen"></div>
       <div id="hr45nS" class="ausgabe starttextDrehen"></div>

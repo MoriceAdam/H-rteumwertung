@@ -179,12 +179,12 @@ function mittelw(zahl11,zahl12, zahl13, zahl14, zahl15){
         Rm1 = Rm;
         hrb1 = hrb;
         hrf1 = hrf;
-        hrc1 = hrc;
-        hra1 = hra;
-        hrd1 = hrd;
-        hr15n1 = hr15n
-        hr30n1 = hr30n
-        hr45n1 = hr45n
+        hrc1 = hrc.toFixed(2);
+        hra1 = hra.toFixed(2);
+        hrd1 = hrd.toFixed(2);
+        hr15n1 = hr15n.toFixed(2);
+        hr30n1 = hr30n.toFixed(2);
+        hr45n1 = hr45n.toFixed(2);
     
         setTimeout(test(zahl2), 100);
         hv2 = hv;
@@ -288,19 +288,19 @@ function mittelw(zahl11,zahl12, zahl13, zahl14, zahl15){
 
 
   
- 
+        hrf1= hrf1.toFixed(1);
 
         document.getElementById("ZUG1").innerHTML = Math.round(Rm1);
         document.getElementById("HV1").innerHTML = Math.round(hv1);
         document.getElementById("HB1").innerHTML = Math.round(HB1);
-        document.getElementById("HRB1").innerHTML = Math.round(hrb1);
-        document.getElementById("HRF1").innerHTML = Math.round(hrf1);
-        document.getElementById("HRC1").innerHTML = Math.round(hrc1);
-        document.getElementById("HRA1").innerHTML = Math.round(hra1);
-        document.getElementById("HRD1").innerHTML = Math.round(hrd1);
-        document.getElementById("HR15N1").innerHTML = Math.round(hr15n1);
-        document.getElementById("HR30N1").innerHTML = Math.round(hr30n1);
-        document.getElementById("HR45N1").innerHTML = Math.round(hr45n1);
+        document.getElementById("HRB1").innerHTML = (hrb1);
+        document.getElementById("HRF1").innerHTML = (hrf1);
+        document.getElementById("HRC1").innerHTML = (hrc1).toFixed(1);
+        document.getElementById("HRA1").innerHTML = (hra1).toFixed(1);
+        document.getElementById("HRD1").innerHTML = (hrd1).toFixed(1);
+        document.getElementById("HR15N1").innerHTML = (hr15n1).toFixed(1);
+        document.getElementById("HR30N1").innerHTML = (hr30n1).toFixed(1);
+        document.getElementById("HR45N1").innerHTML = (hr45n1).toFixed(1);
         
         document.getElementById("ZUG2").innerHTML = Math.round(Rm2);
         document.getElementById("HV2").innerHTML = Math.round(hv2);
