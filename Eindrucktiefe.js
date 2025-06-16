@@ -311,7 +311,7 @@ function fehler1(){
 
 function hi(s,k){
     vickersTiefe=(k-mittelwert)*s;
-    dm=(vickersTiefe*0.5)*2;
+    dm=(1.73205080757*vickersTiefe)*2;
     dMin=10*vickersTiefe;
     absRS=2.5*dm;
     absES=3*dm;
